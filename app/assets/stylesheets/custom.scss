@@ -1,0 +1,33 @@
+.navbar {
+  a {
+    color: black;
+  }
+
+  ul li a:hover {
+    background-color: transparent;
+  }
+}
+
+.jumbotron.top-home-wrapper {
+  background-image: url("home3.jpg");
+  background-size: cover;
+  height: 70vh;
+}
+
+.home-section {
+  margin-top: 100px;
+  margin-bottom: 80px;
+
+  .subtitle {
+    text-align: center;
+
+    .starting {
+      margin-top: 60px;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+}
