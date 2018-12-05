@@ -42,6 +42,9 @@ gem 'devise-i18n', '~> 1.7'
 gem 'devise-i18n-views', '~> 0.3'
 gem 'honoka-rails', '~> 3.3'
 gem 'jquery-rails', '~> 4.3'
+gem 'config', '~> 1.7'
+gem 'pry-byebug'
+gem 'letter_opener'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,0 +1,5 @@
+<p>ようこそ<%= @name %>さん!</p>
+
+<p>下記にアクセスし本登録を完了させてください。</p>
+
+<p><%= link_to '本登録', confirmation_url(@resource, confirmation_token: @token) %></p>
