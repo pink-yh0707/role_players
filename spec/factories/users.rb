@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :user do
     email "hogehoge.test@example.com"
-    name "hogehoge"
+    user_name "hogehoge"
     password "foobar-roleplayers"
 
     trait :confirmed_at do

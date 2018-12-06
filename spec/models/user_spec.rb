@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
   end
 
   it "ユーザーネームがなければ無効である" do
-    user = FactoryBot.build(:user, name: nil)
+    user = FactoryBot.build(:user, user_name: nil)
     user.valid?
     expect(user).to_not be_valid
   end
@@ -26,13 +26,13 @@ RSpec.describe User, type: :model do
 
   it "重複したメールアドレスであるなら無効である" do
     FactoryBot.create(:user, :confirmed_at)
-    user = FactoryBot.build(:user, name: "hogehoge2")
+    user = FactoryBot.build(:user, user_name: "hogehoge2")
     expect(user).to_not be_valid
   end
 
   it "重複したユーザーネームであるなら無効である" do
     FactoryBot.create(:user, :confirmed_at)
     user = FactoryBot.build(:user, email: "hogehoge.test2@example.com")
-    expect(user).to be_valid
+    expect(user).to_not be_valid
   end
 end
