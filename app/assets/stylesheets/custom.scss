@@ -35,4 +35,10 @@
 .form-wrapper {
   background-color: #e5e5e5;
   height: 90vh;
+
+  .form-group {
+    em {
+      font-size: 13px;
+    }
+  }
 }
