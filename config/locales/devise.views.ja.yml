@@ -13,13 +13,21 @@ ja:
             password:
               taken: "は既に使用されています。"
               blank: "が入力されていません。"
-              too_short: "は%{count}文字以上に設定して下さい。"
-              too_long: "は%{count}文字以下に設定して下さい。"
+              too_short: "は8文字以上に設定して下さい。"
+              too_long: "は32文字以下に設定して下さい。"
+              invalid: "は有効でありません。"
+              confirmation: "が内容とあっていません。"
+            password_confirmation:
+              taken: "は既に使用されています。"
+              blank: "が入力されていません。"
+              too_short: "は8文字以上に設定して下さい。"
+              too_long: "は32文字以下に設定して下さい。"
               invalid: "は有効でありません。"
               confirmation: "が内容とあっていません。"
             user_name:
               blank: "が入力されていません。"
               taken: "は既に使用されています。"
+              invalid: "は有効ではありません。"
     attributes:
       user:
         current_password: "現在のパスワード"
@@ -39,6 +47,7 @@ ja:
         action: "アカウント確認"
         greeting: "ようこそ、%{recipient}さん!"
         instruction: "次のリンクでメールアドレスの確認が完了します:"
+        subject: "Role Playersにようこそ!"
       reset_password_instructions:
         action: "パスワード変更"
         greeting: "こんにちは、%{recipient}さん!"

@@ -23,7 +23,7 @@
           <div class="form-group">
             <%= f.label :password %>
             <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <em>8~32文字以内で半角英数字を1つ以上を含める</em>
             <% end %><br />
             <%= f.password_field :password, autocomplete: "new-password",
               class: "form-control"%>
