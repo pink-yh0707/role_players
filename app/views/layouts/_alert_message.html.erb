@@ -1,0 +1,5 @@
+<% flash.each do |msg_type, msg| %>
+  <div class="alert alert-<%= alert_color(msg_type) %>" id="alert-header">
+    <%= msg %>
+  </div>
+<% end %>

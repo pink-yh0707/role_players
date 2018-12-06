@@ -17,10 +17,14 @@ ja:
               too_long: "は%{count}文字以下に設定して下さい。"
               invalid: "は有効でありません。"
               confirmation: "が内容とあっていません。"
+            user_name:
+              blank: "が入力されていません。"
+              taken: "は既に使用されています。"
     attributes:
       user:
         current_password: "現在のパスワード"
         email: "メールアドレス"
+        user_name: "ユーザーネーム"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"

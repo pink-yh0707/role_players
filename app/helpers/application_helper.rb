@@ -8,4 +8,19 @@ module ApplicationHelper
       "#{base_title} | #{sub_title}"
     end
   end
+
+  def alert_color(type)
+    case type
+    when "success"
+      "success"
+    when "error"
+      "danger"
+    when "alert"
+      "danger"
+    when "notice"
+      "info"
+    else
+      type.to_s
+    end
+  end
 end

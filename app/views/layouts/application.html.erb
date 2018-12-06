@@ -10,12 +10,13 @@
   </head>
 
   <body>
-    <%= render "shared/alert_message" %>
+    <%= render "layouts/alert_message" %>
     <%= render "layouts/header" %>
+
     <%= yield %>
     <script>
       $(function(){
-        $(".alert").fadeOut(5000);
+        $("#alert-header").fadeOut(5000);
       });
     </script>
   </body>
