@@ -29,6 +29,34 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "パスワードの値に不備がある場合" do
+    it "8文字未満の場合" do
+      user = FactoryBot.build(:user, password: "a" * 7)
+      user.valid?
+      # deviseを日本語訳したため
+      expect(user.errors[:password]).to include("は有効でありません。")
+    end
+
+    it "33文字以上の場合" do
+      user = FactoryBot.build(:user, password: "8" * 33)
+      user.valid?
+      # deviseを日本語訳したため
+      expect(user.errors[:password]).to include("は有効でありません。")
+    end
+
+    it "英数字が含まれていない場合" do
+      user = FactoryBot.build(:user, password: "a" * 10)
+      user.valid?
+      # deviseを日本語訳したため
+      expect(user.errors[:password]).to include("は有効でありません。")
+
+      user = FactoryBot.build(:user, password: 1 * 10)
+      user.valid?
+      # deviseを日本語訳したため
+      expect(user.errors[:password]).to include("は有効でありません。")
+    end
+  end
+
   describe "重複した値がある場合" do
     it "重複したメールアドレスであるなら無効である" do
       FactoryBot.create(:user, :confirmed_at)
