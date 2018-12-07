@@ -2,7 +2,7 @@
   <div class="container">
     <div class="navbar-header">
       <% if user_signed_in? %>
-        <%= link_to "RolePlayers", users_path(current_user),
+        <%= link_to "RolePlayers", user_path(current_user),
           class: "navbar-brand" %>
       <% else %>
         <%= link_to "RolePlayers", root_path, class: "navbar-brand" %>
@@ -21,6 +21,8 @@
           <li><%= link_to "サインアップ", new_user_registration_path %></li>
 
           <li><%= link_to "ログイン", new_user_session_path %></li>
+
+          <li><%= link_to "記事一覧", "#" %></li>
         <% end %>
       </ul>
     </div>
