@@ -26,7 +26,7 @@ RSpec.describe "sign_ups", type: :system do
         expect(mail.to).to eq ["hogehoge@example.com"]
         expect(mail.from).to eq ["please-change-me-at-config-initializers-devise@example.com"]
         expect(mail.subject).to eq "Role Playersにようこそ!"
-        expect(mail.body).to match "ようこそhogehogeさん!"
+        expect(mail.body).to match "ようこそhogehogeさん"
       end
     end
   end
