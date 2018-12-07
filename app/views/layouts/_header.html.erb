@@ -1,14 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">RolePlayers</a>
+      <% if user_signed_in? %>
+        <%= link_to "RolePlayers", users_path(current_user),
+          class: "navbar-brand" %>
+      <% else %>
+        <%= link_to "RolePlayers", root_path, class: "navbar-brand" %>
+      <% end %>
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
           <li><%= link_to "記事一覧", "#" %></li>
 
-          <li><%= link_to "ユーザー一覧", "#" %></li>
+          <li><%= link_to "ユーザー一覧", users_path %></li>
 
-          <li><%= link_to "マイページ", "#" %></li>
+          <li><%= link_to "マイページ", user_path(current_user) %></li>
 
           <li><%= link_to "ログアウト", destroy_user_session_path,
               method: :delete %></li>
