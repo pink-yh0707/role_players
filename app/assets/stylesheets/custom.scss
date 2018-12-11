@@ -1,4 +1,17 @@
+body {
+  background-color: #e5e5e5;
+}
+
+#alert-header {
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+}
+
 .navbar {
+  margin-bottom: 0px;
+  position: fixed;
   a {
     color: black;
   }
@@ -9,6 +22,8 @@
 }
 
 .top-home-wrapper {
+  padding-top: 150px;
+
   background-image: url("home1.jpg");
   background-size: cover;
   height: 70vh;
@@ -33,8 +48,7 @@
 }
 
 .form-wrapper {
-  background-color: #e5e5e5;
-  height: 110vh;
+  padding-top: 100px;
 
   .form-group {
     em {
@@ -43,20 +57,42 @@
   }
 }
 
-.user-info {
-  h1 {
-    font-size: 25px;
-    margin-top: 0px;
-    padding: 5px;
 
-    .user-name {
-      margin-top: 20px;
+.user-page {
+  padding-top: 100px;
+
+  .user-info {
+    background-color: white;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 10px;
+
+    h1 {
+      font-size: 25px;
+      margin-top: 0px;
+      padding: 5px;
+
+      .user-name {
+        margin-top: 20px;
+      }
+
+      .user-image {
+        margin-top: 30px;
+        width: 35%;
+        height: 35%;
+      }
     }
+  }
 
-    .user-image {
-      margin-top: 30px;
-      width: 35%;
-      height: 35%;
+  .user-profile {
+    background-color: white;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 10px;
+
+    h2 {
+      font-size: 20px;
+      margin-top: 0px;
     }
   }
 }
