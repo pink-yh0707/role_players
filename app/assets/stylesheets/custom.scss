@@ -57,7 +57,7 @@ body {
   }
 }
 
-
+// ユーザーページ
 .user-page {
   padding-top: 80px;
 
@@ -65,7 +65,7 @@ body {
     background-color: white;
     padding: 10px;
     margin: 15px;
-    border-radius: 10px;
+    border-radius: 5px;
 
     h1 {
       font-size: 25px;
@@ -88,7 +88,7 @@ body {
     background-color: white;
     padding: 10px;
     margin: 15px;
-    border-radius: 10px;
+    border-radius: 5px;
 
     h2 {
       font-size: 20px;
@@ -100,7 +100,7 @@ body {
     background-color: white;
     padding: 10px;
     margin: 15px;
-    border-radius: 10px;
+    border-radius: 5px;
   }
 
   .user-edit {
@@ -108,5 +108,34 @@ body {
     padding-top: 100px;
     padding-right: 10px;
     font-size: 20px;
+  }
+}
+
+// ユーザー一覧
+.users-page {
+  padding-top: 100px;
+
+  .row {
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  .users-info {
+    padding-left: 40px;
+    list-style: none;
+
+    li {
+      border-bottom: 1px solid #eaeaea;
+      padding: 15px;
+
+      a {
+        color: #000098;
+      }
+    }
+
+    .users-image {
+      width: 60px;
+      height: 60px;
+    }
   }
 }
