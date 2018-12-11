@@ -59,7 +59,7 @@ body {
 
 
 .user-page {
-  padding-top: 100px;
+  padding-top: 80px;
 
   .user-info {
     background-color: white;
@@ -94,5 +94,19 @@ body {
       font-size: 20px;
       margin-top: 0px;
     }
+  }
+
+  .user-status {
+    background-color: white;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 10px;
+  }
+
+  .user-edit {
+    float: right;
+    padding-top: 100px;
+    padding-right: 10px;
+    font-size: 20px;
   }
 }

@@ -1,28 +1,36 @@
 <% provide(:title, @user.user_name) %>
 
-<div class="container user-page">
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user-info">
-        <h1>
-          <%= image_tag @user.image.url, class: "user-image" %>
-          <%= @user.user_name %>
-        </h1>
-      </section>
+<div class="user-page">
+  <div class="container">
+    <div class="row">
+      <aside class="col-md-4">
+        <section class="user-info">
+          <h1>
+            <%= image_tag @user.image.url, class: "user-image" %>
+            <%= @user.user_name %>
 
-      <section class="user-profile">
-        <h2>
-          自己紹介
-          <%= @user.profile %>
-        </h2>
-      </section>
+            <% if user_signed_in? %>
+              <div class="user-edit">
+                <%= link_to "edit", "#" %>
+              </div>
+            <% end %>
+          </h1>
+        </section>
 
-      <section>
-        <p>ここにフォロースタッツを表示予定</p>
-      </section>
-    </aside>
-    <div class="col-md-8">
-      <p>ここに投稿した記事を表示予定</p>
+        <section class="user-profile">
+          <h2>
+            自己紹介
+            <%= @user.profile %>
+          </h2>
+        </section>
+
+        <section class="user-status">
+          <p>ここにフォロースタッツを表示予定</p>
+        </section>
+      </aside>
+      <div class="col-md-8">
+        <p class="text-center">ここに投稿した記事を表示予定</p>
+      </div>
     </div>
   </div>
 </div>
