@@ -9,10 +9,10 @@
             <%= image_tag @user.image.url, class: "user-image" %>
             <%= @user.user_name %>
 
-            <% if user_signed_in? %>
-              <div class="user-edit">
-                <%= link_to "edit", "#" %>
-              </div>
+            <% if current_user?(@user) %>
+              <span class="user-edit">
+                <%= link_to "edit", profile_edit_path %>
+              </span>
             <% end %>
           </h1>
         </section>
