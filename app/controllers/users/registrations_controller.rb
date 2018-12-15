@@ -2,7 +2,19 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :configure_account_update_params, only: [:update, :profile_update]
+  before_action :authenticate_user!
+
+  def profile_edit
+  end
+
+  def profile_update
+    if current_user.update_attributes(account_update_params)
+      redirect_to current_user, success: "プロフィールを更新しました。"
+    else
+      render "profile_edit"
+    end
+  end
 
   # GET /resource/sign_up
   # def new
@@ -59,4 +71,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  private
+    def configure_account_update_params
+      devise_parameter_sanitizer.permit(:account_update, keys: [:user_name])
+    end
+
+    # deviseの設定を変更するためオーバーライド
+    def update_resource(resource, params)
+      resource.update_without_current_password(params)
+    end
 end

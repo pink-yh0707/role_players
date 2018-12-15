@@ -1,4 +1,17 @@
+body {
+  background-color: #e5e5e5;
+}
+
+#alert-header {
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+}
+
 .navbar {
+  margin-bottom: 0px;
+  position: fixed;
   a {
     color: black;
   }
@@ -9,7 +22,9 @@
 }
 
 .top-home-wrapper {
-  background-image: url("home3.jpg");
+  padding-top: 150px;
+
+  background-image: url("home1.jpg");
   background-size: cover;
   height: 70vh;
 }
@@ -33,12 +48,96 @@
 }
 
 .form-wrapper {
-  background-color: #e5e5e5;
-  height: 110vh;
+  padding-top: 100px;
 
   .form-group {
     em {
       font-size: 13px;
+    }
+  }
+}
+
+// ユーザーページ
+.user-page {
+  padding-top: 80px;
+
+  .user-info {
+    background-color: white;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 5px;
+    position: relative;
+
+    h1 {
+      font-size: 25px;
+      margin-top: 0px;
+      padding: 5px;
+
+      .user-name {
+        margin-top: 20px;
+      }
+
+      .user-image {
+        margin-top: 30px;
+        width: 35%;
+        height: 35%;
+      }
+    }
+  }
+
+  .user-profile {
+    background-color: white;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 5px;
+
+    h2 {
+      font-size: 20px;
+      margin-top: 0px;
+    }
+  }
+
+  .user-status {
+    background-color: white;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 5px;
+  }
+
+  .user-edit {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font-size: 20px;
+
+  }
+}
+
+// ユーザー一覧
+.users-page {
+  padding-top: 100px;
+
+  .row {
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  .users-info {
+    padding-left: 40px;
+    list-style: none;
+
+    li {
+      border-bottom: 1px solid #eaeaea;
+      padding: 15px;
+
+      a {
+        color: #000098;
+      }
+    }
+
+    .users-image {
+      width: 60px;
+      height: 60px;
     }
   }
 }
