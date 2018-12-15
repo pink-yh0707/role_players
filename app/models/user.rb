@@ -15,18 +15,11 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-    def update_without_current_password(params, *options)
-      # edit機能を使うためにユーザーのパスワードを入力するというdeviseの使用を変更するため
-      params.delete(:current_password)
-
-      # パスワード、確認パスワードが両方入力されているときのみ更新できるようにするため
-      if params[:password].blank? && params[:password_confirmation].blank?
-        params.delete(:password)
-        params.delete(:password_confirmation)
-      end
-
-      result = update_attributes(params, *options)
-      clean_up_passwords
-      result
+  def update_with_password(params, *options)
+    if params[:password].blank?
+      params.delete(:password)
     end
+
+    update_attributes(params, *options)
+  end
 end
