@@ -2,20 +2,20 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :configure_account_update_params, only: [:update, :profile_update]
   before_action :authenticate_user!
 
   def profile_edit
   end
 
   def profile_update
-    current_user.assign_attributes(account_update_params)
-    if current_user.save
-      redirect_to user_path(current_user), success: "プロフィールを更新しました。"
+    if current_user.update_attributes(account_update_params)
+      redirect_to current_user, success: "プロフィールを更新しました。"
     else
       render "profile_edit"
     end
   end
+
   # GET /resource/sign_up
   # def new
   #   super

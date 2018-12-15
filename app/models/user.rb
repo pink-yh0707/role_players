@@ -17,12 +17,12 @@ class User < ApplicationRecord
 
     def update_without_current_password(params, *options)
       # edit機能を使うためにユーザーのパスワードを入力するというdeviseの使用を変更するため
-      params.delete(current_password)
+      params.delete(:current_password)
 
       # パスワード、確認パスワードが両方入力されているときのみ更新できるようにするため
       if params[:password].blank? && params[:password_confirmation].blank?
-        params[:password].delete
-        params[:password_confirmation].delete
+        params.delete(:password)
+        params.delete(:password_confirmation)
       end
 
       result = update_attributes(params, *options)
