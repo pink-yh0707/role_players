@@ -1,1 +1,21 @@
 <% provide(:title, "Create Article") %>
+
+<div class="form-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <h1 class="text-center">記事作成ページ</h1>
+
+        <%= form_for @artcle do |f| %>
+        <%= render "shared/error_messages" %>
+
+        <div class="form-group">
+          <%= f.label :article_title, "記事タイトル" %>
+          <%= f.text_field :article_title, class: "form-control %>"
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
