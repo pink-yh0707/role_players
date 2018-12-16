@@ -11,7 +11,15 @@
 
         <div class="form-group">
           <%= f.label :article_title, "記事タイトル" %>
-          <%= f.text_field :article_title, class: "form-control %>"
+          <%= f.text_field :article_title, class: "form-control %>
+        </div>
+
+        <div class="form-group">
+          <%= f.fields_for :image do |img| %>
+            <%= img.label :image, '選手画像' %>
+            <%= img.file_field :image%>
+            <%= img.hidden_field :id, value: img.object.id %>
+          <% end %>
         </div>
 
         <% end %>

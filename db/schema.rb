@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_16_082550) do
+ActiveRecord::Schema.define(version: 2018_12_16_084632) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -31,6 +31,19 @@ ActiveRecord::Schema.define(version: 2018_12_16_082550) do
     t.datetime "updated_at", null: false
     t.index ["id", "article_id"], name: "index_player_images_on_id_and_article_id", unique: true
     t.index ["id", "player_id"], name: "index_player_images_on_id_and_player_id", unique: true
+  end
+
+  create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "article_id"
+    t.string "player_name"
+    t.string "team_name"
+    t.string "country"
+    t.integer "height"
+    t.integer "weight"
+    t.string "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
