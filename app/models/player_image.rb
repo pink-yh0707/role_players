@@ -1,0 +1,2 @@
+class PlayerImage < ApplicationRecord
+end
