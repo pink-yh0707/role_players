@@ -1,4 +1,4 @@
 class PlayerImage < ApplicationRecord
-  has_one :article
-  has_one :player
+  belongs_to :article
+  belongs_to :player
 end

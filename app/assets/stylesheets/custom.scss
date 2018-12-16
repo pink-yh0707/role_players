@@ -64,7 +64,7 @@ body {
   .user-info {
     background-color: white;
     padding: 10px;
-    margin: 15px;
+    margin: 15px 0 15px 15px;
     border-radius: 5px;
     position: relative;
 
@@ -88,7 +88,7 @@ body {
   .user-profile {
     background-color: white;
     padding: 10px;
-    margin: 15px;
+    margin: 15px 0 15px 15px;
     border-radius: 5px;
 
     h2 {
@@ -100,7 +100,7 @@ body {
   .user-status {
     background-color: white;
     padding: 10px;
-    margin: 15px;
+    margin: 15px 0 15px 15px;
     border-radius: 5px;
   }
 
@@ -109,7 +109,11 @@ body {
     right: 20px;
     bottom: 10px;
     font-size: 20px;
+  }
 
+  .article-button {
+    border-radius: 5px;
+    margin-top: 15px;
   }
 }
 

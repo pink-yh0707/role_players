@@ -29,6 +29,13 @@
         </section>
       </aside>
       <div class="col-md-8">
+        <% if current_user?(@user) %>
+          <%= link_to new_article_path do %>
+            <button type="button" name="button" class="btn-block btn-success article-button">
+              記事を作成する</button>
+          <% end %>
+        <% end %>
+        
         <p class="text-center">ここに投稿した記事を表示予定</p>
       </div>
     </div>
