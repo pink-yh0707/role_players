@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
+  has_many :articles
+
   attr_accessor :current_password
 
   # 8~32文字内で半角英数字が1つ以上含まれている
