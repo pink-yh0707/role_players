@@ -8,6 +8,5 @@ class Article < ApplicationRecord
   accepts_nested_attributes_for :player, update_only: true
 
   validates :user_id, presence: true
-  validates :player_id, presence: true
   validates :content, presence: true
 end
