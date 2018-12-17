@@ -1,19 +1,16 @@
-<% provide(:title, @user.user_name) %>
-
 <div class="user-page">
   <div class="container">
     <div class="row">
       <aside class="col-md-4">
         <section class="user-info">
           <h1>
-            <%= image_tag @user.image.url, class: "user-image" %>
-            <%= @user.user_name %>
+            <%= image_tag current_user.image.url, class: "user-image" %>
 
-            <% if current_user?(@user) %>
-              <span class="user-edit">
-                <%= link_to "編集", edit_user_registration_path %>
-              </span>
-            <% end %>
+            <%= current_user.user_name %>
+
+            <span class="user-edit">
+              <%= link_to "編集", edit_user_registration_path %>
+            </span>
           </h1>
         </section>
 
@@ -21,7 +18,7 @@
           <h2>
             自己紹介
           </h2>
-          <%= @user.profile %>
+          <%= current_user.profile %>
         </section>
 
         <section class="user-status">
@@ -29,11 +26,9 @@
         </section>
       </aside>
       <div class="col-md-8">
-        <% if current_user?(@user) %>
-          <%= link_to new_article_path do %>
-            <button type="button" name="button" class="btn-block btn-success article-button">
-              記事を作成する</button>
-          <% end %>
+        <%= link_to new_article_path do %>
+          <button type="button" name="button" class="btn-block btn-success article-button">
+            記事を作成する</button>
         <% end %>
 
         <p class="text-center">ここに投稿した記事を表示予定</p>

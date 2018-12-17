@@ -7,8 +7,6 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    @article.build_player_image
-    @article.build_player
   end
 
   def create
@@ -20,6 +18,8 @@ class ArticlesController < ApplicationController
       render "new"
     end
   end
+
+  # 公開非公開 enum
 
   private
     def article_params
