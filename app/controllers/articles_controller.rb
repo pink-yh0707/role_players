@@ -7,12 +7,15 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @article.build_player_image
+    @article.build_player
   end
 
   def create
     @article = current_user.articles.build(article_params)
     if @article.save
-      redirect_to current_user, success: "記事を作成しました。"
+      redirect_to current_user
+      flash[:success] = "記事を作成しました。"
     else
       render "new"
     end

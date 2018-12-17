@@ -1,4 +1,5 @@
 class PlayerImage < ApplicationRecord
   belongs_to :article
-  belongs_to :player
+
+  mount_uploader :image, ImageUploader
 end
