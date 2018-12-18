@@ -16,14 +16,35 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    set_mode
+    super
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    # 下記コードはdevise githubから
+    self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
+     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
+
+     # メール認証をスキップ
+     resource.skip_reconfirmation!
+     resource_updated = update_resource(resource, account_update_params)
+     yield resource if block_given?
+     if resource_updated
+       if is_flashing_format?
+         flash_key = update_needs_confirmation?(resource, prev_unconfirmed_email) ?
+           :update_needs_confirmation : :updated
+         set_flash_message :notice, flash_key
+       end
+       bypass_sign_in resource, scope: resource_name
+       redirect_to current_user, success: "プロフィールを更新しました。"
+     else
+       clean_up_passwords resource
+       set_minimum_password_length
+       edit
+     end
+  end
 
   # DELETE /resource
   # def destroy
@@ -62,7 +83,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   private
+    def set_mode
+      if (!params[:user].nil? && params[:user][:mode] == "profile") || (params[:user].nil? && params[:mode].nil?) || (params[:mode] == "profile") then
+        @mode = "profile"
+      else
+        @mode = "password"
+      end
+    end
+
+    def update_resource(resource, params)
+      if params[:password].present? && params[:password_confirmation].present?
+        resource.update_attributes(params)
+      else
+        resource.update_without_password(params)
+      end
+    end
+
     def configure_account_update_params
-      devise_parameter_sanitizer.permit(:account_update, keys: [:user_name, :profile])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:user_name, :profile, :image])
     end
 end
