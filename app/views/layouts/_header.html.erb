@@ -1,12 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-warning bg-warning navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <% if user_signed_in? %>
-        <%= link_to "RolePlayers", user_path(current_user),
-          class: "navbar-brand" %>
-      <% else %>
-        <%= link_to "RolePlayers", root_path, class: "navbar-brand" %>
-      <% end %>
+      <%= link_to "RolePlayers", root_path, class: "navbar-brand" %>
+    
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
           <li><%= link_to "記事一覧", articles_path %></li>
