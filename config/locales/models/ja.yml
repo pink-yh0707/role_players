@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    attributes:
+      article:
+        content: 紹介文
+        article_title: 記事タイトル
+
+      player:
+        player_name: 選手名
+        team_name: 所属チーム
+        country: 国籍
+        position: ポジション
+        height: 身長
+        weight: 体重
