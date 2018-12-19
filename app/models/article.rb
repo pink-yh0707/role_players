@@ -8,5 +8,5 @@ class Article < ApplicationRecord
   accepts_nested_attributes_for :player, update_only: true
 
   validates :user_id, presence: true
-  validates :content, presence: true
+  validates :content, presence: true, length: { maximum:  10000 }
 end
