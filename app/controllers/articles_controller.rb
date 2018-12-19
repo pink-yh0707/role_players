@@ -19,8 +19,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # 公開非公開 enum
-
   private
     def article_params
       params.require(:article).permit(
