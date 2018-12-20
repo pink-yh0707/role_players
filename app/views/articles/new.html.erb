@@ -15,10 +15,8 @@
           </div>
 
           <div class="form-group">
-            <%= f.fields_for :player_image, @article.build_player_image do |img| %>
-              <%= img.label :image, '選手画像' %>
-              <%= img.file_field :image%>
-            <% end %>
+            <%= f.label :article_image, '選手画像' %>
+            <%= f.file_field :article_image %>
           </div>
 
           <div class="form-group">

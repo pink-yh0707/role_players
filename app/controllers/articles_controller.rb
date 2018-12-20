@@ -23,8 +23,7 @@ class ArticlesController < ApplicationController
   private
     def article_params
       params.require(:article).permit(
-        :article_title, :content,
-        player_image_attributes: [:image],
+        :article_title, :content, :article_image,
         player_attributes: [
           :player_name, :team_name, :country, :position,
           :height, :weight
