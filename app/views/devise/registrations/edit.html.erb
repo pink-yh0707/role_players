@@ -47,7 +47,6 @@
               </div>
               <%= link_to "プロフィールの編集をする場合", edit_user_registration_path + "?mode=profile" %>
 
-              <%# モードはHiddenタグでPostする %>
               <%= f.hidden_field :mode, :value => @mode %>
 
 
@@ -77,7 +76,6 @@
 
               <%= link_to "メールアドレス、又はパスワードを変更する場合", edit_user_registration_path + "?mode=password" %>
 
-              <%# モードはHiddenタグでPostする %>
               <%= f.hidden_field :mode, value: @mode %>
             <% end %>
         <% end %>

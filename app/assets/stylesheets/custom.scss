@@ -9,6 +9,18 @@ body {
   text-align: center;
 }
 
+.nav {
+  .open {
+    a:hover {
+      background-color: white;
+    }
+
+    a:focus {
+      background-color: white;
+    }
+  }
+}
+
 .navbar {
   margin-bottom: 0px;
   position: fixed;
@@ -17,7 +29,7 @@ body {
   }
 
   ul li a:hover {
-    background-color: transparent;
+    background-color: white;
   }
 }
 
@@ -90,6 +102,7 @@ body {
         margin-top: 30px;
         width: 35%;
         height: 35%;
+        object-fit: contain;
       }
     }
   }
@@ -151,6 +164,11 @@ body {
     .users-image {
       width: 60px;
       height: 60px;
+      object-fit: contain;
+    }
+
+    .users-name {
+      margin-left: 10px;
     }
   }
 }
@@ -161,4 +179,51 @@ body {
   padding-top: 10px;
   margin: 15px;
   border-radius: 5px;
+}
+
+// 記事一覧ページ
+.articles-page {
+  padding-top: 100px;
+
+  .row {
+    background-color: white;
+    border-radius: 5px;
+
+    .articles-info {
+      padding-left: 40px;
+      list-style: none;
+
+      li {
+        border-bottom: 1px solid #eaeaea;
+        padding: 15px;
+      }
+
+      .articles-image {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+      }
+
+      .articles-title {
+        font-size: 40px;
+        color: #000098;
+      }
+
+      .articles-name {
+        margin-left: 0;
+        margin-right: 10px;
+        color: #000098;
+      }
+
+      .articles-updated-time {
+        display: inline;
+        color: #b2b2b2;
+        font-size: 15px;
+      }
+
+      .articles-content {
+        padding-top: 10px;
+      }
+    }
+  }
 }
