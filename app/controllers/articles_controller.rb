@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   def index
+    @articles = Article.all.includes(:player)
   end
 
   def show
