@@ -9,6 +9,10 @@ body {
   text-align: center;
 }
 
+.row {
+  padding-bottom: 100px;
+}
+
 .nav {
   .open {
     a:hover {
@@ -139,7 +143,7 @@ body {
   }
 }
 
-// ユーザー一覧
+// ユーザー一覧ページ
 .users-page {
   padding-top: 100px;
 
@@ -209,7 +213,7 @@ body {
         color: #000098;
       }
 
-      .articles-name {
+      .articles-user-name {
         margin-left: 0;
         margin-right: 10px;
         color: #000098;
@@ -224,6 +228,83 @@ body {
       .articles-content {
         padding-top: 10px;
       }
+    }
+  }
+}
+
+// 記事詳細ページ
+.article-page {
+  padding-top: 100px;
+
+  .row {
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin: 10px;
+  }
+
+  .article-image {
+    height: 250px;
+    weight: 200px;
+    margin: 30px 10px;
+    object-fit: contain;
+  }
+
+  .article-sub-info {
+    margin-top: 20px;
+
+      .article-sub-user-name {
+        margin-top: 10px;
+        color: #000098;
+      }
+
+      .article-updated-time {
+        margin-left: 10px;
+        display: inline;
+        color: #b2b2b2;
+        font-size: 15px;
+      }
+
+      .article-title {
+        border-bottom: 1px solid #eaeaea;
+        margin-top: 10px;
+        padding: 0px 15px 15px 0;
+      }
+
+      .country {
+        border-bottom: 1px solid #eaeaea;
+        padding: 0 15px 15px 0;
+      }
+
+      .player-spec {
+        margin-bottom: 50px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eaeaea;
+      }
+  }
+
+  .article-content {
+    margin: 0 20px;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .article-user {
+    padding-left: 20px;
+
+    a {
+      color: #000098;
+      font-size: 16px;
+    }
+
+    .article-user-image {
+      height: 50px;
+      weight: 50px;
+      object-fit: contain;
     }
   }
 }
