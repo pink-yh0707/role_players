@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <%= render "shared/user" %>
+  <%= render @user %>
 <% else %>
   <div class="jumbotron top-home-wrapper">
     <div class="container">
@@ -16,7 +16,7 @@
       <div class="subtitle">
         <h2>Welcome to Role Players!</h2>
         <p>Role Playersはロールプレイヤーにフォーカスしたバスケットボールファンの交流の場です。</p>
-        
+
         <div class="starting">
           <h3><a href="/users/sign_up">今すぐはじめる</a></h3>
         </div>

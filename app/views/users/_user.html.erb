@@ -1,0 +1,32 @@
+<div class="user-page">
+  <div class="container">
+    <div class="row">
+      <aside class="col-md-4">
+        <section class="user-info">
+          <h1>
+            <%= image_tag @user.image.url, class: "user-image" %>
+            <%= @user.user_name %>
+
+            <% if current_user?(@user) %>
+              <span class="user-edit">
+                <%= link_to "編集", edit_user_registration_path %>
+              </span>
+            <% end %>
+          </h1>
+        </section>
+
+        <section class="user-profile">
+          <h2>
+            自己紹介
+          </h2>
+          <%= simple_format(@user.profile) %>
+        </section>
+
+        <section class="user-status">
+          <p>ここにフォロースタッツを表示予定</p>
+        </section>
+      </aside>
+      <%= render "users/my_article" %>
+    </div>
+  </div>
+</div>
