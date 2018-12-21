@@ -20,7 +20,7 @@
           <h2 class="player-spec"><%= "身長/体重 #{@article.player.height} / #{@article.player.weight}" %></h2><br>
         </div>
 
-        <h2 class="article-content"><%= @article.content %></h2>
+        <h2 class="article-content"><%= simple_format(@article.content) %></h2>
 
         <h3  class="article-user">
           <%= image_tag @article.user.image.url, class: "article-user-image" %>

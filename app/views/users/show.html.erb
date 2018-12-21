@@ -21,7 +21,7 @@
           <h2>
             自己紹介
           </h2>
-          <%= @user.profile %>
+          <%= simple_format(@user.profile) %>
         </section>
 
         <section class="user-status">
@@ -35,8 +35,6 @@
               記事を作成する</button>
           <% end %>
         <% end %>
-
-        <p class="text-center">ここに投稿した記事を表示予定</p>
       </div>
     </div>
   </div>

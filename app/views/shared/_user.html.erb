@@ -18,7 +18,7 @@
           <h2>
             自己紹介
           </h2>
-          <%= current_user.profile %>
+          <%= simple_format(current_user.profile) %>
         </section>
 
         <section class="user-status">
