@@ -1,0 +1,74 @@
+<div class="form-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <h1 class="text-center"><%= yield(:page_title) %></h1>
+
+        <%= form_for @article do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+
+          <div class="form-group">
+            <%= f.label :article_title, "記事タイトル" %>
+            <%= f.text_field :article_title, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :article_image, '選手画像' %>
+            <%= f.file_field :article_image %>
+          </div>
+
+          <div class="form-group">
+            <%= f.fields_for :player do |p| %>
+              <%= p.label :player_name, "選手名" %>
+              <%= p.text_field :player_name, class: "form-control" %>
+            <% end %>
+          </div>
+
+          <div class="form-group">
+            <%= f.fields_for :player do |p| %>
+              <%= p.label :team_name, "所属チーム" %>
+              <%= p.text_field :team_name, class: "form-control" %>
+            <% end %>
+          </div>
+
+          <div class="form-group">
+            <%= f.fields_for :player do |p| %>
+              <%= p.label :country, "国籍" %>
+              <%= p.text_field :country, class: "form-control" %>
+            <% end %>
+          </div>
+
+          <div class="form-group">
+            <%= f.fields_for :player do |p| %>
+              <%= p.label :position, "ポジション" %>
+              <%= p.text_field :position, class: "form-control" %>
+            <% end %>
+          </div>
+
+          <div class="form-group">
+            <%= f.fields_for :player do |p| %>
+              <%= p.label :height, "身長" %>
+              <%= p.text_field :height, class: "form-control" %>
+            <% end %>
+          </div>
+
+          <div class="form-group">
+            <%= f.fields_for :player do |p| %>
+              <%= p.label :weight, "体重" %>
+              <%= p.text_field :weight, class: "form-control" %>
+            <% end %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :content, "紹介文" %>
+            <%= f.text_area :content, size: "10x20", class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit yield(:button_text), class: "btn-block btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
