@@ -28,14 +28,7 @@
           <p>ここにフォロースタッツを表示予定</p>
         </section>
       </aside>
-      <div class="col-md-8">
-        <% if current_user?(@user) %>
-          <%= link_to new_article_path do %>
-            <button type="button" name="button" class="btn-block btn-success article-button">
-              記事を作成する</button>
-          <% end %>
-        <% end %>
-      </div>
+      <%= render "my_article" %>
     </div>
   </div>
 </div>

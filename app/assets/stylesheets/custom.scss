@@ -141,7 +141,71 @@ body {
     border-radius: 5px;
     margin-top: 15px;
   }
+
+  .my-articles {
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+
+    .articles-info {
+      padding-left: 40px;
+      list-style: none;
+
+      li {
+        border-bottom: 1px solid #eaeaea;
+        padding: 15px;
+      }
+
+      .articles-image {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+      }
+
+      .articles-title {
+        font-size: 30px;
+        color: #000098;
+      }
+
+      .articles-user-name {
+        margin-left: 0;
+        margin-right: 10px;
+        color: #000098;
+      }
+
+      .articles-updated-time {
+        display: inline;
+        color: #b2b2b2;
+        font-size: 15px;
+      }
+
+      .article-edit {
+        float: right;
+        padding-right: 10px;
+      }
+
+      .articles-content {
+        padding-top: 10px;
+      }
+    }
+  }
+
+  .havent-article {
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+    height: 30vh;
+
+    h3 {
+      border-bottom: 1px solid #eaeaea;
+      padding: 15px;
+    }
+  }
 }
+
+
+
+
 
 // ユーザー一覧ページ
 .users-page {
