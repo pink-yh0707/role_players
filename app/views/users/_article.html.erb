@@ -10,7 +10,7 @@
         <p class="articles-updated-time"><%= "#{time_ago_in_words(article.updated_at)}前" %></p>
 
         <% if current_user?(@user) %>
-          <%= link_to "編集", "#", class: "article-edit" %>
+          <%= link_to "編集", edit_article_path(article.id), class: "article-edit" %>
         <% end %>
       </span><br>
 

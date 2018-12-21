@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+  before_action :correct_user, only: [:edit, :update]
+
   def index
     @articles = Article.all.includes(:player)
   end
@@ -9,15 +12,29 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @article.build_player
   end
 
   def create
-    @article = current_user.articles.build(article_params)
+    @article = current_user.articles.new(article_params)
     if @article.save
-      redirect_to current_user
       flash[:success] = "記事を作成しました。"
+      redirect_to current_user
     else
       render "new"
+    end
+  end
+
+  def edit
+    @article.player = Player.new if @article.player.blank?
+  end
+
+  def update
+    if @article.update_attributes(article_params)
+      flash[:success] = "記事を更新しました。"
+      redirect_to article_path
+    else
+      render "edit"
     end
   end
 
@@ -30,5 +47,10 @@ class ArticlesController < ApplicationController
           :height, :weight
         ]
       )
+    end
+
+    def correct_user
+      @article = current_user.articles.find_by(id: params[:id])
+      redirect_to root_url if @article.nil?
     end
 end

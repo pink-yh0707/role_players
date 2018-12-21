@@ -11,6 +11,9 @@
         <div class="col-md-7 article-sub-info">
           <%= link_to "@#{@article.user.user_name}", user_path(@article.user.id), class: "article-sub-user-name" %>
           <p class="article-updated-time"><%= "#{time_ago_in_words(@article.updated_at)}前に更新" %></p>
+          <% if current_user?(@article.user) %>
+            <%= link_to "編集", edit_article_path(@article.id), class: "article-edit" %>
+          <% end %>
 
           <h1 class="article-title"><%= @article.article_title %></h1>
           <h2 ><%= @article.player.player_name %></h2>

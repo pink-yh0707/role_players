@@ -1,12 +1,12 @@
-<% provide(:title, "Create Article") %>
-<% provide(:title, "記事作成ページ") %>
-<% provide(:button_text, "作成") %>
+<% provide(:title, "Article Edit") %>
+<% provide(:page_title, "記事編集ページ") %>
+<% provide(:button_text, "更新") %>
 
 <div class="form-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
-        <h1 class="text-center">記事作成ページ</h1>
+        <h1 class="text-center"><%= yield(:page_title) %></h1>
 
         <%= form_for @article do |f| %>
           <%= render "shared/error_messages", object: f.object %>
