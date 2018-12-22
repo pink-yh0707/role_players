@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
     @articles = Article.all.includes(:player)
@@ -36,6 +36,12 @@ class ArticlesController < ApplicationController
     else
       render "edit"
     end
+  end
+
+  def destroy
+    @article.destroy
+    flash[:success] = "記事を削除しました。"
+    redirect_to root_url
   end
 
   private
