@@ -12,7 +12,7 @@
             <%= link_to article.article_title, article_path(article.id), class: "articles-title col-md-8" %><br>
 
             <span class="col-md-8">
-              <%= link_to article.user.user_name, user_path(article.user_id), class: "articles-user-name" %>
+              <%= link_to "@#{article.user.user_name}", user_path(article.user_id), class: "articles-user-name" %>
               <p class="articles-updated-time"><%= "#{time_ago_in_words(article.updated_at)}前" %></p>
             </span><br>
 
