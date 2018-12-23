@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.new(article_params)
     if @article.save
       flash[:success] = "記事を作成しました。"
-      redirect_to current_user
+      redirect_to @article
     else
       render "new"
     end
@@ -44,10 +44,24 @@ class ArticlesController < ApplicationController
     redirect_to root_url
   end
 
+  def release
+    article = Article.find(params[:id])
+    article.released! if !article.released?
+    flash[:success] = "記事を公開しました。"
+    redirect_to article_path
+  end
+
+  def private
+    article = Article.find(params[:id])
+    article.privated! if !article.privated?
+    flash[:success] = "記事を非公開にしました"
+    redirect_to article_path
+  end
+
   private
     def article_params
       params.require(:article).permit(
-        :article_title, :content, :article_image,
+        :article_title, :content, :article_image, :status,
         player_attributes: [
           :player_name, :team_name, :country, :position,
           :height, :weight

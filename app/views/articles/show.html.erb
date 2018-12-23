@@ -18,6 +18,16 @@
               <%= link_to "削除", article_path(@article), method: :delete,
                 data: { confirm: "本当に削除してもよろしいですか？" } %>
             </span>
+
+            <span class="article-private">
+              <% if @article.released? %>
+                <%= link_to "記事を非公開にする", private_article_path(@article),
+                  method: :patch %>
+              <% else %>
+                <%= link_to "記事を公開する", release_article_path(@article),
+                  method: :patch %>
+              <% end %>
+            </span>
           <% end %>
 
           <h1 class="article-title"><%= @article.article_title %></h1>

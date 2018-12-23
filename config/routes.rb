@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "home#index"
+  root  "home#index"
+
   devise_for :users, controllers: {
     :sessions      => "users/sessions",
     :registrations => "users/registrations",
@@ -7,5 +8,10 @@ Rails.application.routes.draw do
   }
 
   resources :users, only: [:index, :show]
-  resources :articles
+  resources :articles do
+    member do
+      patch "release"
+      patch "private"
+    end
+  end
 end

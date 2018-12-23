@@ -288,6 +288,16 @@ body {
   }
 }
 
+.release-article {
+  margin-right: 10px;
+  color: #006532
+}
+
+.private-article {
+  margin-right: 10px;
+  color: #7f7f7f;
+}
+
 // 記事詳細ページ
 .article-page {
   padding-top: 100px;
@@ -326,6 +336,12 @@ body {
 
       .article-edit {
         margin-left: 10px;
+      }
+
+      .article-private {
+        font-size: 15px;
+        float: right;
+        margin-right: 10px
       }
 
       .article-title {

@@ -11,4 +11,6 @@ class Article < ApplicationRecord
   validates :content, presence: true, length: { maximum: 10000 }
 
   mount_uploader :article_image, ArticleImageUploader
+
+  enum status: { privated: 0, released: 1 }
 end
