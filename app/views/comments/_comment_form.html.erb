@@ -1,24 +1,14 @@
-<div class="jumbotron comment-form">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-1 col-md-10">
-        <%= icon("fas","comment-dots", class: "comment-icon") %>
-        <p class="comment-icon-text">コメント</p>
-      </div>
-      <div class="col-md-offset-1 col-md-10 comment-info">
-        <% if user_signed_in? %>
-          <h1>test</h1>
-        <% else %>
-          <h4 class="text-center comment-reminder">コメントしてみよう！</h4>
-          <button class="btn btn-primary center-block comment-signup">
-            <%= link_to "サインアップ", new_user_registration_path %>
-          </button>
+<%= form_for @comment do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
 
-          <h5 class="text-center comment-login-text">
-            すでにアカウントをお持ちの方は<%= link_to "こちら", new_user_session_path %>
-          </h5>
-        <% end %>
-      </div>
-    </div>
+  <div class="form-group">
+    <%= f.text_area :content, size: "10x10", placeholder: "コメントを入力してください",
+      class: "form-control" %>
+
+    <%= f.hidden_field :id, value: params[:id] %>
   </div>
-</div>
+
+  <div class="form-group">
+    <%= f.submit "投稿する", class: "btn btn-primary pull-right" %>
+  </div>
+<% end %>

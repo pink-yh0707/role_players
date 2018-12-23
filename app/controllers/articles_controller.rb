@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @comment = current_user.comments.build
   end
 
   def new
@@ -16,7 +17,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = current_user.articles.new(article_params)
+    @article = current_user.articles.build(article_params)
     if @article.save
       flash[:success] = "記事を作成しました。"
       redirect_to @article

@@ -1,0 +1,25 @@
+<div class="jumbotron comment-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <%= icon("fas","comment-dots", class: "comment-icon") %>
+        <p class="comment-icon-text">コメント</p>
+      </div>
+      <div class="col-md-offset-1 col-md-10 comment-info">
+        <% if user_signed_in? %>
+          <h4>コメントする</h4>
+          <%= render "comments/comment_form" %>
+        <% else %>
+          <h4 class="text-center comment-reminder">コメントしてみよう！</h4>
+          <button class="btn btn-primary center-block comment-signup">
+            <%= link_to "サインアップ", new_user_registration_path %>
+          </button>
+
+          <h5 class="text-center comment-login-text">
+            すでにアカウントをお持ちの方は<%= link_to "こちら", new_user_session_path %>
+          </h5>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
