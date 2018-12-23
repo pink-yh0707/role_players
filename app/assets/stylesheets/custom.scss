@@ -1,5 +1,5 @@
 body {
-  background-color: #e5e5e5;
+  background-color: #f6f6f6;
 }
 
 #alert-header {
@@ -382,5 +382,15 @@ body {
       weight: 50px;
       object-fit: contain;
     }
+  }
+}
+
+// 記事詳細ページ内のコメントフォーム
+.comment-form {
+  background-color: white;
+  margin-top: 70px;
+
+  .comment-info {
+    background-color: #fafafa;
   }
 }
