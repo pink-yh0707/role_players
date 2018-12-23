@@ -9,6 +9,22 @@ body {
   text-align: center;
 }
 
+.row {
+  padding-bottom: 100px;
+}
+
+.nav {
+  .open {
+    a:hover {
+      background-color: white;
+    }
+
+    a:focus {
+      background-color: white;
+    }
+  }
+}
+
 .navbar {
   margin-bottom: 0px;
   position: fixed;
@@ -17,16 +33,24 @@ body {
   }
 
   ul li a:hover {
-    background-color: transparent;
+    background-color: white;
+  }
+}
+
+.navbar-toggle {
+  background-color: white;
+
+  .icon-bar {
+    background-color: black;
   }
 }
 
 .top-home-wrapper {
-  padding-top: 150px;
+  padding-top: 280px;
 
   background-image: url("home1.jpg");
   background-size: cover;
-  height: 70vh;
+  height: 100vh;
 }
 
 .home-section {
@@ -49,6 +73,7 @@ body {
 
 .form-wrapper {
   padding-top: 100px;
+  margin-bottom: 100px;
 
   .form-group {
     em {
@@ -64,7 +89,7 @@ body {
   .user-info {
     background-color: white;
     padding: 10px;
-    margin: 15px;
+    margin: 15px 0 15px 15px;
     border-radius: 5px;
     position: relative;
 
@@ -81,6 +106,7 @@ body {
         margin-top: 30px;
         width: 35%;
         height: 35%;
+        object-fit: contain;
       }
     }
   }
@@ -88,7 +114,7 @@ body {
   .user-profile {
     background-color: white;
     padding: 10px;
-    margin: 15px;
+    margin: 15px 0 15px 15px;
     border-radius: 5px;
 
     h2 {
@@ -100,7 +126,7 @@ body {
   .user-status {
     background-color: white;
     padding: 10px;
-    margin: 15px;
+    margin: 15px 0 15px 15px;
     border-radius: 5px;
   }
 
@@ -109,11 +135,79 @@ body {
     right: 20px;
     bottom: 10px;
     font-size: 20px;
+  }
 
+  .article-button {
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+
+  .my-articles {
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+
+    .articles-info {
+      padding-left: 40px;
+      list-style: none;
+
+      li {
+        border-bottom: 1px solid #eaeaea;
+        padding: 15px;
+      }
+
+      .articles-image {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+      }
+
+      .articles-title {
+        font-size: 30px;
+        color: #000098;
+      }
+
+      .articles-user-name {
+        margin-left: 0;
+        margin-right: 10px;
+        color: #000098;
+      }
+
+      .articles-updated-time {
+        display: inline;
+        color: #b2b2b2;
+        font-size: 15px;
+      }
+
+      .article-edit {
+        float: right;
+        padding-right: 10px;
+      }
+
+      .articles-content {
+        padding-top: 10px;
+      }
+    }
+  }
+
+  .havent-article {
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+    height: 30vh;
+
+    h3 {
+      border-bottom: 1px solid #eaeaea;
+      padding: 15px;
+    }
   }
 }
 
-// ユーザー一覧
+
+
+
+
+// ユーザー一覧ページ
 .users-page {
   padding-top: 100px;
 
@@ -138,6 +232,155 @@ body {
     .users-image {
       width: 60px;
       height: 60px;
+      object-fit: contain;
+    }
+
+    .users-name {
+      margin-left: 10px;
+    }
+  }
+}
+
+// 記事一覧ページ
+.articles-page {
+  padding-top: 100px;
+
+  .row {
+    background-color: white;
+    border-radius: 5px;
+
+    .articles-info {
+      padding-left: 40px;
+      list-style: none;
+
+      li {
+        border-bottom: 1px solid #eaeaea;
+        padding: 15px;
+      }
+
+      .articles-image {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+      }
+
+      .articles-title {
+        font-size: 30px;
+        color: #000098;
+      }
+
+      .articles-user-name {
+        margin-left: 0;
+        margin-right: 10px;
+        color: #000098;
+      }
+
+      .articles-updated-time {
+        display: inline;
+        color: #b2b2b2;
+        font-size: 15px;
+      }
+
+      .articles-content {
+        padding-top: 10px;
+      }
+    }
+  }
+}
+
+.release-article {
+  margin-right: 10px;
+  color: #006532
+}
+
+.private-article {
+  margin-right: 10px;
+  color: #7f7f7f;
+}
+
+// 記事詳細ページ
+.article-page {
+  padding-top: 100px;
+
+  .row {
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin: 10px;
+  }
+
+  .article-image {
+    height: 250px;
+    weight: 200px;
+    margin: 30px 10px;
+    object-fit: contain;
+  }
+
+  .article-sub-info {
+    margin-top: 20px;
+
+      .article-sub-user-name {
+        margin-top: 10px;
+        color: #000098;
+      }
+
+      .article-updated-time {
+        margin-left: 10px;
+        display: inline;
+        color: #b2b2b2;
+        font-size: 15px;
+      }
+
+      .article-edit {
+        margin-left: 10px;
+      }
+
+      .article-private {
+        font-size: 15px;
+        float: right;
+        margin-right: 10px
+      }
+
+      .article-title {
+        border-bottom: 1px solid #eaeaea;
+        margin-top: 10px;
+        padding: 0px 15px 15px 0;
+      }
+
+      .country {
+        border-bottom: 1px solid #eaeaea;
+        padding: 0 15px 15px 0;
+      }
+
+      .player-spec {
+        margin-bottom: 50px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eaeaea;
+      }
+  }
+
+  .article-content {
+    margin: 0 20px;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .article-user {
+    padding-left: 20px;
+
+    a {
+      color: #000098;
+      font-size: 16px;
+    }
+
+    .article-user-image {
+      height: 50px;
+      weight: 50px;
+      object-fit: contain;
     }
   }
 }

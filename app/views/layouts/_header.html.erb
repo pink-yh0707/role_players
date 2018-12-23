@@ -1,30 +1,48 @@
 <nav class="navbar navbar-expand-lg navbar-warning bg-warning navbar-fixed-top">
   <div class="container">
-    <div class="navbar-header">
-      <% if user_signed_in? %>
-        <%= link_to "RolePlayers", user_path(current_user),
-          class: "navbar-brand" %>
-      <% else %>
-        <%= link_to "RolePlayers", root_path, class: "navbar-brand" %>
-      <% end %>
-      <ul class="nav navbar-nav">
-        <% if user_signed_in? %>
-          <li><%= link_to "記事一覧", "#" %></li>
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+        data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
-          <li><%= link_to "ユーザー一覧", users_path %></li>
+      <%= link_to "RolePlayers", root_path, class: "navbar-brand" %>
 
-          <li><%= link_to "マイページ", user_path(current_user) %></li>
+      <div class="collapse navbar-collapse navbar-left" id="navbar">
+        <ul class="nav navbar-nav">
+          <% if user_signed_in? %>
+            <li><%= link_to "記事一覧", articles_path %></li>
 
-          <li><%= link_to "ログアウト", destroy_user_session_path,
-              method: :delete %></li>
-        <% else %>
-          <li><%= link_to "サインアップ", new_user_registration_path %></li>
+            <li><%= link_to "ユーザー一覧", users_path %></li>
 
-          <li><%= link_to "ログイン", new_user_session_path %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                マイページ<span class="caret"></span>
+              </a>
 
-          <li><%= link_to "記事一覧", "#" %></li>
-        <% end %>
-      </ul>
-    </div>
+              <ul class="dropdown-menu">
+                <li><%= link_to "マイページ", user_path(current_user) %></li>
+
+                <li><%= link_to "編集", edit_user_registration_path %></li>
+
+                <li><%= link_to "記事作成", new_article_path %></li>
+
+                <li><%= link_to "ログアウト", destroy_user_session_path,
+                    method: :delete %></li>
+              </ul>
+            </li>
+
+          <% else %>
+            <li><%= link_to "サインアップ", new_user_registration_path %></li>
+
+            <li><%= link_to "ログイン", new_user_session_path %></li>
+
+            <li><%= link_to "記事一覧", articles_path %></li>
+
+            <li><%= link_to "ユーザー一覧", users_path %></li>
+          <% end %>
+        </ul>
+      </div>
   </div>
 </nav>

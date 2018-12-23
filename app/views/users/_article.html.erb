@@ -1,0 +1,21 @@
+<li class="col-md-12">
+  <%= image_tag article.article_image.url, class: "articles-image col-md-4" %><br>
+
+  <%= link_to article.article_title, article_path(article.id), class: "articles-title col-md-8" %><br>
+
+  <span class="col-md-8">
+    <%= link_to "@#{article.user.user_name}", user_path(article.user_id), class: "articles-user-name" %>
+    <p class="articles-updated-time"><%= "#{time_ago_in_words(article.updated_at)}前" %></p>
+
+    <% if current_user?(@user) && article.released? %>
+      <span class="release-article pull-right">公開記事</span>
+    <% elsif current_user?(@user) %>
+      <span class="private-article pull-right">非公開記事</span>
+    <% end %>
+  </span><br>
+
+  <span class="articles-content col-md-8">
+    <%= truncate(article.content, length: 200) %>
+    <%= link_to "続きを読む", article_path(article.id) %>
+  </span>
+</li>

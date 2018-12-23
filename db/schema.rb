@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_074854) do
+ActiveRecord::Schema.define(version: 2018_12_22_130818) do
+
+  create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "article_title"
+    t.string "article_image"
+    t.integer "status", limit: 1, default: 1, null: false
+    t.index ["id", "user_id"], name: "index_articles_on_id_and_user_id", unique: true
+    t.index ["id"], name: "index_articles_on_id_and_player_id", unique: true
+  end
+
+  create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "article_id"
+    t.string "player_name"
+    t.string "team_name"
+    t.string "country"
+    t.integer "height"
+    t.integer "weight"
+    t.string "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,7 +49,7 @@ ActiveRecord::Schema.define(version: 2018_12_11_074854) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "user_name", default: "", null: false
-    t.string "profile"
+    t.text "profile"
     t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

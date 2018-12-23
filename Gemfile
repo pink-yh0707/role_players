@@ -38,6 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise', '~> 4.5'
 gem 'devise-i18n', '~> 1.7'
 gem 'devise-i18n-views', '~> 0.3'
+gem 'rails-i18n'
 gem 'honoka-rails', '~> 3.3'
 gem 'jquery-rails', '~> 4.3'
 gem 'carrierwave', '~> 1.2'

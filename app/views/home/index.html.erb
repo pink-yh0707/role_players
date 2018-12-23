@@ -1,21 +1,26 @@
-<div class="jumbotron top-home-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-2 col-md-8 text-center">
-        <h1>Role Players</h1>
-        <p>One for all, All for one</p>
+<% if user_signed_in? %>
+  <%= render @user %>
+<% else %>
+  <div class="jumbotron top-home-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8 text-center">
+          <h1>Role Players</h1>
+          <p>One for all, All for one</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<section class="home-section">
-  <div class="container">
-    <div class="subtitle">
-      <h2>Welcome to Role Players!</h2>
-      <p>Role Playersはロールプレイヤーにフォーカスしたバスケットボールファンの交流の場です。</p>
-      <div class="starting">
-        <h3><a href="/users/sign_up">今すぐはじめる</a></h3>
+  <section class="home-section">
+    <div class="container">
+      <div class="subtitle">
+        <h2>Welcome to Role Players!</h2>
+        <p>Role Playersはロールプレイヤーにフォーカスしたバスケットボールファンの交流の場です。</p>
+
+        <div class="starting">
+          <h3><a href="/users/sign_up">今すぐはじめる</a></h3>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+<% end %>

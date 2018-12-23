@@ -1,0 +1,28 @@
+<% if current_user?(@user) && @user.articles.present? %>
+  <div class="col-md-8 my-articles">
+      <%= link_to new_article_path do %>
+        <button type="button" name="button" class="btn-block btn-success article-button">
+          記事を作成する</button>
+      <% end %>
+
+    <%= render "users/private_articles" %>
+  </div>
+
+<% elsif current_user?(@user) %>
+  <div class="col-md-8">
+    <%= link_to new_article_path do %>
+      <button type="button" name="button" class="btn-block btn-success article-button">
+        記事を作成する</button>
+    <% end %>
+  </div>
+
+<% elsif @user.articles.present? %>
+  <div class="col-md-8 my-articles">
+    <%= render "users/private_articles" %>
+  </div>
+
+<% else %>
+  <div class="col-md-8 havent-article">
+    <h3>このユーザーはまだ記事を投稿していません</h3>
+  </div>
+<% end %>

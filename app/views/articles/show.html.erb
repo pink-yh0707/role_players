@@ -1,0 +1,50 @@
+<% provide(:title, "Article") %>
+
+<div class="article-page">
+  <div class="container">
+    <div class="row">
+      <div class="artcle-info">
+        <div class="col-md-5">
+          <%= image_tag @article.article_image.url, class: "article-image" %>
+        </div>
+
+        <div class="col-md-7 article-sub-info">
+          <%= link_to "@#{@article.user.user_name}", user_path(@article.user.id), class: "article-sub-user-name" %>
+          <p class="article-updated-time"><%= "#{time_ago_in_words(@article.updated_at)}前に更新" %></p>
+
+          <% if current_user?(@article.user) %>
+            <span class="article-edit">
+              <%= link_to "編集", edit_article_path(@article) %> /
+              <%= link_to "削除", article_path(@article), method: :delete,
+                data: { confirm: "本当に削除してもよろしいですか？" } %>
+            </span>
+
+            <span class="article-private">
+              <% if @article.released? %>
+                <%= link_to "記事を非公開にする", private_article_path(@article),
+                  method: :patch %>
+              <% else %>
+                <%= link_to "記事を公開する", release_article_path(@article),
+                  method: :patch %>
+              <% end %>
+            </span>
+          <% end %>
+
+          <h1 class="article-title"><%= @article.article_title %></h1>
+          <h2 ><%= @article.player.player_name %></h2>
+          <h2 ><%= @article.player.team_name %></h2>
+          <h2 class="country"><%= @article.player.country %></h2>
+          <h2 ><%= "ポジション #{@article.player.position}" %></h2>
+          <h2 class="player-spec"><%= "身長/体重 #{@article.player.height} / #{@article.player.weight}" %></h2><br>
+        </div>
+
+        <h2 class="article-content"><%= simple_format(@article.content) %></h2>
+
+        <h3  class="article-user">
+          <%= image_tag @article.user.image.url, class: "article-user-image" %>
+          <%= link_to @article.user.user_name, user_path(@article.user.id) %>
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
