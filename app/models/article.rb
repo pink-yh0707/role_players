@@ -4,6 +4,8 @@ class Article < ApplicationRecord
   has_one :player, dependent: :destroy
   accepts_nested_attributes_for :player, update_only: true
 
+  has_many :comments
+
   default_scope -> { order(created_at: :desc) }
 
   validates :user_id, presence: true
