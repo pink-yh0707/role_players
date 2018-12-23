@@ -390,7 +390,33 @@ body {
   background-color: white;
   margin-top: 70px;
 
+  .comment-icon {
+    font-size: 30px;
+  }
+
+  .comment-icon-text {
+    font-size: 18px;
+    font-weight: bold;
+    display: inline;
+  }
+
   .comment-info {
     background-color: #fafafa;
+    padding-top: 20px;
+
+    .comment-reminder {
+      margin-bottom: 35px;
+    }
+
+    .comment-signup {
+      a {
+        color: white;
+      }
+    }
+
+    .comment-login-text {
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
   }
 }
