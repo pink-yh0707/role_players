@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   }
 
   resources :users, only: [:index, :show]
+  resources :comments, only: [:create]
   resources :articles do
     member do
       patch "release"
