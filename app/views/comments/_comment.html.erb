@@ -4,6 +4,8 @@
       <%= image_tag comment.user.image.url, class: "comment-user-image" %>
       <%= link_to comment.user.user_name, user_path(comment.user), class: "comment-user-name" %>
 
+      <span class="comment-created-time"><%= comment.created_at.strftime("%Y年%-m月%-d日 %H:%M") %></span>
+
       <p class="comment-content"><%= simple_format(comment.content) %></p>
     </div>
 
