@@ -5,6 +5,7 @@ class Article < ApplicationRecord
   accepts_nested_attributes_for :player, update_only: true
 
   has_many :comments
+  has_many :favorite_articles, dependent: :destroy
 
   default_scope -> { order(created_at: :desc) }
 
