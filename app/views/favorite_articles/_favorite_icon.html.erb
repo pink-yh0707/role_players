@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+  <% if article.favorites.include?(current_user) %>
+    <%= link_to article_favorite_article_path(article, current_user), method: :delete do %>
+      <%= icon("fas", "thumbs-up", class: "favorite-not-favorite-icon") %>
+    <% end %>
+  <% else %>
+    <%= link_to article_favorite_articles_path(article), method: :post do %>
+      <%= icon("far", "thumbs-up", class: "favorite-favorite-icon") %>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to new_user_session_path do %>
+    <%= icon("far", "thumbs-up", class: "favorite-default-icon") %>
+  <% end %>
+<% end %>
+<%= article.favorite_articles.count %>

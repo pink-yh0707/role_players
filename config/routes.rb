@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
   resources :comments, only: :create
-  resources :favorite_articles, only: [:create, :destroy]
   resources :articles do
+    resources :favorite_articles, only: [:create, :destroy]
+    
     member do
       patch "release"
       patch "private"

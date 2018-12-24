@@ -273,12 +273,12 @@ body {
         margin-left: 0;
         margin-right: 10px;
         color: #000098;
-      }
 
-      .articles-updated-time {
-        display: inline;
-        color: #7f7f7f;
-        font-size: 15px;
+        .articles-updated-time {
+          display: inline;
+          color: #7f7f7f;
+          font-size: 15px;
+        }
       }
 
       .articles-content {
@@ -286,6 +286,23 @@ body {
       }
     }
   }
+}
+
+.favorite-default-icon {
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.favorite-favorite-icon {
+  font-size: 20px;
+  margin-left: 5px;
+  color: #ffbf00;
+}
+
+.favorite-not-favorite-icon {
+  font-size:  20px;
+  margin-left: 5px;
+  color: #ffbf00;
 }
 
 .release-article {
