@@ -1,9 +1,9 @@
 <ul class="articles-info">
   <% @articles.each do |article| %>
     <% if article.released? %>
-      <%= render partial: "users/article", locals: { article: article } %>
+      <%= render partial: "articles/article", locals: { article: article } %>
     <% elsif current_user?(@user) %>
-      <%= render partial: "users/article", locals: { article: article } %>
+      <%= render partial: "articles/article", locals: { article: article } %>
     <% end %>
   <% end %>
 </ul>

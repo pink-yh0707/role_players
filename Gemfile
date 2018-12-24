@@ -42,6 +42,7 @@ gem 'rails-i18n'
 gem 'honoka-rails', '~> 3.3'
 gem 'jquery-rails', '~> 4.3'
 gem 'carrierwave', '~> 1.2'
+gem 'font-awesome-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

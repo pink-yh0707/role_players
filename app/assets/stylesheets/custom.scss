@@ -1,5 +1,5 @@
 body {
-  background-color: #e5e5e5;
+  background-color: #f6f6f6;
 }
 
 #alert-header {
@@ -175,7 +175,7 @@ body {
 
       .articles-updated-time {
         display: inline;
-        color: #b2b2b2;
+        color: #7f7f7f;
         font-size: 15px;
       }
 
@@ -277,7 +277,7 @@ body {
 
       .articles-updated-time {
         display: inline;
-        color: #b2b2b2;
+        color: #7f7f7f;
         font-size: 15px;
       }
 
@@ -330,7 +330,7 @@ body {
       .article-updated-time {
         margin-left: 10px;
         display: inline;
-        color: #b2b2b2;
+        color: #7f7f7f;
         font-size: 15px;
       }
 
@@ -374,13 +374,85 @@ body {
 
     a {
       color: #000098;
-      font-size: 16px;
+      font-size: 17px;
+      font-weight: bold;
     }
 
     .article-user-image {
       height: 50px;
-      weight: 50px;
       object-fit: contain;
+    }
+  }
+}
+
+// 記事詳細ページ内のコメントフォーム
+.comment-area {
+  background-color: white;
+  margin-top: 70px;
+
+  p {
+    font-size: 16px
+  }
+
+  a {
+    font-size: 15px;
+    color: #000098;
+  }
+
+  .comment-icon {
+    font-size: 30px;
+  }
+
+  .comment-icon-text {
+    font-size: 18px;
+    font-weight: bold;
+    display: inline;
+  }
+
+  .comment-user {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    border-bottom: solid 1px #e5e5e5;
+
+    .comment-user-image {
+      height: 30px;
+      object-fit: contain;
+    }
+
+    .comment-user-name {
+      display: inline;
+      margin-left: 5px;
+    }
+
+    .comment-created-time {
+      float: right;
+      font-size: 14px;
+      color: #7f7f7f;
+    }
+
+    .comment-content {
+      margin-top: 18px;
+    }
+  }
+
+  .comment-info {
+    background-color: #fafafa;
+    padding-top: 20px;
+
+    .comment-reminder {
+      margin-bottom: 35px;
+    }
+
+    .comment-signup {
+      a {
+        color: white;
+      }
+    }
+
+    .comment-login-text {
+      margin-top: 20px;
+      margin-bottom: 40px;
     }
   }
 }

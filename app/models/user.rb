@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   has_many :articles, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   attr_accessor :current_password
 
