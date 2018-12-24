@@ -1,0 +1,11 @@
+<div class="col-md-offset-1 col-md-10">
+  <% @article.comments.each do |comment| %>
+    <div class="comment-user">
+      <%= image_tag comment.user.image.url, class: "comment-user-image" %>
+      <%= link_to comment.user.user_name, user_path(comment.user), class: "comment-user-name" %>
+
+      <p class="comment-content"><%= simple_format(comment.content) %></p>
+    </div>
+
+  <% end %>
+</div>
