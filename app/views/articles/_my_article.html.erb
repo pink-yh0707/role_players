@@ -5,7 +5,7 @@
           記事を作成する</button>
       <% end %>
 
-    <%= render "users/private_articles" %>
+    <%= render "articles/private_articles" %>
   </div>
 
 <% elsif current_user?(@user) %>
@@ -18,7 +18,7 @@
 
 <% elsif @user.articles.present? %>
   <div class="col-md-8 my-articles">
-    <%= render "users/private_articles" %>
+    <%= render "articles/private_articles" %>
   </div>
 
 <% else %>
