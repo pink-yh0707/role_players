@@ -1,0 +1,4 @@
+<%= link_to article_favorite_article_path(article, current_user),
+  method: :delete, remote: true do %>
+  <%= icon("fas", "thumbs-up", class: "favorite-not-favorite-icon") %>
+<% end %>

@@ -3,12 +3,18 @@ class FavoriteArticlesController < ApplicationController
 
   def create
     current_user.favorite_articles.create(article_id: params[:article_id])
-    redirect_to request.referrer || root_path
+    respond_to do |format|
+      format.html { redirect_to request.referrer || root_path }
+      format.json
+    end
   end
 
   def destroy
-    favorite_article = FavoriteArticle.find_by(user_id: params[:id], article_id: params[:article_id])
-    favorite_article.destroy
-    redirect_to request.referrer || root_path
+    @favorite_article = FavoriteArticle.find_by(user_id: params[:id], article_id: params[:article_id])
+    @favorite_article.destroy
+    respond_to do |format|
+      format.html { redirect_to request.referrer || root_path }
+      format.json
+    end
   end
 end

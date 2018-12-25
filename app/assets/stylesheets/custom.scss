@@ -373,7 +373,6 @@ body {
       }
 
       .player-spec {
-        margin-bottom: 50px;
         padding-bottom: 15px;
         border-bottom: 1px solid #eaeaea;
       }
@@ -470,6 +469,35 @@ body {
     .comment-login-text {
       margin-top: 20px;
       margin-bottom: 40px;
+    }
+  }
+}
+
+.favorite-area {
+  margin-left: 7px;
+  margin-bottom: 50px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eaeaea;
+
+  .favorite-status {
+    margin-left: 530px;
+
+    .favorite-favorite-icon {
+      font-size: 30px;
+      display: inline;
+      color: #ffbf00;
+    }
+
+    .favorite-not-favorite-icon {
+      font-size: 30px;
+      display: inline;
+      color: #ffbf00;
+    }
+
+    .favorite-count {
+      display: inline;
+      font-size: 20px;
+      margin-left: 5px;
     }
   }
 }

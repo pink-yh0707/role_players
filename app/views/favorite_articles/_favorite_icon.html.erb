@@ -1,16 +1,14 @@
 <% if user_signed_in? %>
-  <% if article.favorites.include?(current_user) %>
-    <%= link_to article_favorite_article_path(article, current_user), method: :delete do %>
-      <%= icon("fas", "thumbs-up", class: "favorite-not-favorite-icon") %>
+  <span id="favorite-form<%= article.id %>">
+    <% if article.favorites.include?(current_user) %>
+      <%= render partial: "favorite_articles/not_favorite", locals: { article: article } %>
+    <% else %>
+      <%= render partial: "favorite_articles/favorite", locals: { article: article } %>
     <% end %>
-  <% else %>
-    <%= link_to article_favorite_articles_path(article), method: :post do %>
-      <%= icon("far", "thumbs-up", class: "favorite-favorite-icon") %>
-    <% end %>
-  <% end %>
+  </span>
 <% else %>
   <%= link_to new_user_session_path do %>
     <%= icon("far", "thumbs-up", class: "favorite-default-icon") %>
   <% end %>
 <% end %>
-<%= article.favorite_articles.count %>
+<span id="favorite-count"><%= article.favorite_articles.count %></span>
