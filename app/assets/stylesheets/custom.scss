@@ -288,33 +288,6 @@ body {
   }
 }
 
-.favorite-default-icon {
-  font-size: 20px;
-  margin-left: 5px;
-}
-
-.favorite-favorite-icon {
-  font-size: 20px;
-  margin-left: 5px;
-  color: #ffbf00;
-}
-
-.favorite-not-favorite-icon {
-  font-size:  20px;
-  margin-left: 5px;
-  color: #ffbf00;
-}
-
-.release-article {
-  margin-right: 10px;
-  color: #006532
-}
-
-.private-article {
-  margin-right: 10px;
-  color: #7f7f7f;
-}
-
 // 記事詳細ページ
 .article-page {
   padding-top: 100px;
@@ -471,6 +444,35 @@ body {
       margin-bottom: 40px;
     }
   }
+}
+
+// いいね機能
+
+.private-article {
+  margin-right: 10px;
+  color: #7f7f7f;
+}
+
+.favorite-default-icon {
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.favorite-favorite-icon {
+  font-size: 20px;
+  margin-left: 5px;
+  color: #ffbf00;
+}
+
+.favorite-not-favorite-icon {
+  font-size:  20px;
+  margin-left: 5px;
+  color: #ffbf00;
+}
+
+.release-article {
+  margin-right: 10px;
+  color: #006532
 }
 
 .favorite-area {
