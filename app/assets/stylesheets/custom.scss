@@ -273,12 +273,12 @@ body {
         margin-left: 0;
         margin-right: 10px;
         color: #000098;
-      }
 
-      .articles-updated-time {
-        display: inline;
-        color: #7f7f7f;
-        font-size: 15px;
+        .articles-updated-time {
+          display: inline;
+          color: #7f7f7f;
+          font-size: 15px;
+        }
       }
 
       .articles-content {
@@ -286,16 +286,6 @@ body {
       }
     }
   }
-}
-
-.release-article {
-  margin-right: 10px;
-  color: #006532
-}
-
-.private-article {
-  margin-right: 10px;
-  color: #7f7f7f;
 }
 
 // 記事詳細ページ
@@ -356,7 +346,6 @@ body {
       }
 
       .player-spec {
-        margin-bottom: 50px;
         padding-bottom: 15px;
         border-bottom: 1px solid #eaeaea;
       }
@@ -453,6 +442,64 @@ body {
     .comment-login-text {
       margin-top: 20px;
       margin-bottom: 40px;
+    }
+  }
+}
+
+// いいね機能
+
+.private-article {
+  margin-right: 10px;
+  color: #7f7f7f;
+}
+
+.favorite-default-icon {
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.favorite-favorite-icon {
+  font-size: 20px;
+  margin-left: 5px;
+  color: #ffbf00;
+}
+
+.favorite-not-favorite-icon {
+  font-size:  20px;
+  margin-left: 5px;
+  color: #ffbf00;
+}
+
+.release-article {
+  margin-right: 10px;
+  color: #006532
+}
+
+.favorite-area {
+  margin-left: 7px;
+  margin-bottom: 50px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eaeaea;
+
+  .favorite-status {
+    margin-left: 530px;
+
+    .favorite-favorite-icon {
+      font-size: 30px;
+      display: inline;
+      color: #ffbf00;
+    }
+
+    .favorite-not-favorite-icon {
+      font-size: 30px;
+      display: inline;
+      color: #ffbf00;
+    }
+
+    #favorite-count {
+      display: inline;
+      font-size: 20px;
+      margin-left: 5px;
     }
   }
 }

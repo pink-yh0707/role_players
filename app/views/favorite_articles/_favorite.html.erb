@@ -1,0 +1,4 @@
+<%= link_to article_favorite_articles_path(@article),
+  method: :post, remote: true do %>
+  <%= icon("far", "thumbs-up", class: "favorite-favorite-icon") %>
+<% end %>

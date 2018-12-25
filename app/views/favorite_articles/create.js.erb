@@ -1,0 +1,2 @@
+$("#favorite-form<%= @article.id %>").html("<%= escape_javascript(render('favorite_articles/not_favorite')) %>");
+$("#favorite-count<%= @article.id %>").html("<%= @article.favorite_articles.count %>");

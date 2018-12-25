@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+  <% @article = article %>
+
+  <span id="favorite-form<%= article.id %>">
+    <% if article.favorites.include?(current_user) %>
+      <%= render "favorite_articles/not_favorite" %>
+    <% else %>
+      <%= render "favorite_articles/favorite" %>
+    <% end %>
+  </span>
+<% else %>
+  <%= link_to new_user_session_path do %>
+    <%= icon("far", "thumbs-up", class: "favorite-default-icon") %>
+  <% end %>
+<% end %>
+<span id="favorite-count<%= article.id %>"><%= article.favorite_articles.count %></span>
