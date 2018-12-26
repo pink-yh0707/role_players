@@ -1,12 +1,20 @@
 class RelationshipsController < ApplicationController
   def create
-    current_user.active_relationships.create(followed_id: params[:user_id])
-    redirect_to request.referrer || root_url
+    @user = (params[:user_id])
+    current_user.active_relationships.create(followed_id: @user)
+    respond_to do |format|
+      format.html { redirect_to request.referrer || root_url }
+      format.js
+    end
   end
 
   def destroy
-    relationship  = current_user.active_relationships.find_by(followed_id: params[:user_id])
-    relationship.destroy
-    redirect_to request.referrer || root_url
+    @user = (params[:user_id])
+    @relationship  = current_user.active_relationships.find_by(followed_id: @user)
+    @relationship.destroy
+    respond_to do |format|
+      format.html { redirect_to request.referrer || root_url }
+      format.js
+    end
   end
 end
