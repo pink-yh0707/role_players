@@ -8,16 +8,22 @@
             <%= @user.user_name %>
           </h1>
 
-          <% if current_user?(@user) && user_signed_in? %>
-            <button type="button" class="btn-default follow-button">
-              <%= icon("far", "star", class: "follow-icon") %>
-             <h4 class="follow-icon-text">フォローする</h4>
-           </button>
-          <% else %>
-            <button type="button" class="btn-warning unfollow-button">
-              <%= icon("fas", "star", class: "unfollow-icon") %>
-              <h4 class="unfollow-icon-text">フォロー中</h4>
-            </button>
+          <% if !current_user?(@user) && user_signed_in? %>
+            <% if @user.followers.include?(current_user) %>
+              <%= link_to user_relationship_path(@user), method: :delete do %>
+                <button type="button" class="btn-warning unfollow-button">
+                  <%= icon("fas", "star", class: "unfollow-icon") %>
+                  <h4 class="unfollow-icon-text">フォロー中</h4>
+                </button>
+              <% end %>
+            <% else %>
+              <%= link_to user_relationships_path(@user), method: :post do %>
+                <button type="button" class="btn-default follow-button">
+                  <%= icon("far", "star", class: "follow-icon") %>
+                 <h4 class="follow-icon-text">フォローする</h4>
+               </button>
+              <% end %>
+            <% end %>
           <% end %>
 
           <% if current_user?(@user) %>
