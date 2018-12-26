@@ -91,7 +91,6 @@ body {
     padding: 10px;
     margin: 15px 0 15px 15px;
     border-radius: 5px;
-    position: relative;
 
     h1 {
       font-size: 25px;
@@ -130,10 +129,35 @@ body {
     border-radius: 5px;
   }
 
+  .follow-form {
+    height: 20px;
+  }
+
+  .follow-icon {
+    font-size: 15px;
+  }
+
+  .follow-icon-text {
+    display: inline;
+    font-size: 14px;
+  }
+
+  .unfollow-form {
+    height: 20px;
+  }
+
+  .unfollow-icon {
+    font-size: 15px;
+  }
+
+  .unfollow-icon-text {
+    display: inline;
+    font-size: 14px;
+  }
+
   .user-edit {
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
+    float: right;
+    margin-right: 10px;
     font-size: 20px;
   }
 

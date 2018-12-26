@@ -11,10 +11,9 @@ Rails.application.routes.draw do
   resources :comments, only: :create
   resources :articles do
     resources :favorite_articles, only: [:create, :destroy]
-    
+
     member do
-      patch "release"
-      patch "private"
+      patch :release, :private
     end
   end
 end

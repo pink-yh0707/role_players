@@ -21,11 +21,9 @@
 
             <span class="article-private">
               <% if @article.released? %>
-                <%= link_to "記事を非公開にする", private_article_path(@article),
-                  method: :patch %>
+                <%= render "private" %>
               <% else %>
-                <%= link_to "記事を公開する", release_article_path(@article),
-                  method: :patch %>
+                <%= render "release" %>
               <% end %>
             </span>
           <% end %>

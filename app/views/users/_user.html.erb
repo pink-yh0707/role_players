@@ -6,13 +6,25 @@
           <h1>
             <%= image_tag @user.image.url, class: "user-image" %>
             <%= @user.user_name %>
-
-            <% if current_user?(@user) %>
-              <span class="user-edit">
-                <%= link_to "編集", edit_user_registration_path %>
-              </span>
-            <% end %>
           </h1>
+
+          <% if current_user?(@user) && user_signed_in? %>
+            <button type="button" class="btn-default follow-button">
+              <%= icon("far", "star", class: "follow-icon") %>
+             <h4 class="follow-icon-text">フォローする</h4>
+           </button>
+          <% else %>
+            <button type="button" class="btn-warning unfollow-button">
+              <%= icon("fas", "star", class: "unfollow-icon") %>
+              <h4 class="unfollow-icon-text">フォロー中</h4>
+            </button>
+          <% end %>
+
+          <% if current_user?(@user) %>
+            <span class="user-edit">
+              <%= link_to "編集", edit_user_registration_path %>
+            </span>
+          <% end %>
         </section>
 
         <section class="user-profile">
