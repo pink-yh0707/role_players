@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:following, :followers]
+
   def index
     @users = User.all
   end

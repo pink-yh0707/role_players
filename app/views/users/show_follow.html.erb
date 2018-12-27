@@ -45,6 +45,14 @@
                 <% end %>
               </div>
             <% end %>
+
+            <div class="follow-users">
+              <% @users.each do |user| %>
+                <%= link_to user_path(user) do %>
+                  <%= image_tag user.image.url, class: "follow-user" %>
+                <% end %>
+              <% end %>
+            </div>
           </section>
         </div>
       </aside>
