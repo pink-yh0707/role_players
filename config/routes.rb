@@ -7,14 +7,20 @@ Rails.application.routes.draw do
     :passwords     => "users/passwords"
   }
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    resources :relationships, only: [:create, :destroy]
+
+    member do
+      get :following, :followers
+    end
+  end
+
   resources :comments, only: :create
   resources :articles do
     resources :favorite_articles, only: [:create, :destroy]
-    
+
     member do
-      patch "release"
-      patch "private"
+      patch :release, :private
     end
   end
 end

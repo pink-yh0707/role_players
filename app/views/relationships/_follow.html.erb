@@ -1,0 +1,6 @@
+<%= link_to user_relationships_path(@user), method: :post, remote: true do %>
+  <button type="button" class="btn-default follow-button">
+    <%= icon("far", "star", class: "follow-icon") %>
+    <h4 class="follow-icon-text">フォローする</h4>
+  </button>
+<% end %>

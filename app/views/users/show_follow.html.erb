@@ -1,3 +1,5 @@
+<% provide(:title, @title) %>
+
 <div class="user-page">
   <div class="container">
     <div class="row">
@@ -7,16 +9,6 @@
             <%= image_tag @user.image.url, class: "user-image" %>
             <%= @user.user_name %>
           </h1>
-
-          <% if !current_user?(@user) && user_signed_in? %>
-            <span id="follow-form">
-              <% if @user.followers.include?(current_user) %>
-                <%= render "relationships/unfollow" %>
-              <% else %>
-                <%= render "relationships/follow" %>
-              <% end %>
-            </span>
-          <% end %>
 
           <% if current_user?(@user) %>
             <span class="user-edit">
@@ -46,7 +38,7 @@
 
               <div class="user-stat">
                 <%= link_to followers_user_path(@user) do %>
-                  <strong id="followers-count">
+                  <strong>
                     <%= @user.followers.count %>
                   </strong>
                   <p>フォロワー</p>
@@ -56,7 +48,18 @@
           </section>
         </div>
       </aside>
-      <%= render "articles/my_article" %>
+
+      <div class="col-md-8 follow-page">
+        <h2 class="text-center"><%= @title_users %></h2>
+        <ul class="follow-info">
+          <% @users.each do |user| %>
+            <li>
+              <%= image_tag user.image.url, class: "users-image" %>
+              <%= link_to user.user_name, user_path(user), class: "users-name" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

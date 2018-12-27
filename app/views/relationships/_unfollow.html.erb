@@ -1,0 +1,6 @@
+<%= link_to user_relationship_path(@user, current_user), method: :delete, remote: true do %>
+  <button type="button" class="btn-warning unfollow-button">
+    <%= icon("fas", "star", class: "unfollow-icon") %>
+    <h4 class="unfollow-icon-text">フォロー中</h4>
+  </button>
+<% end %>
