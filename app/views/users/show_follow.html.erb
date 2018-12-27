@@ -10,16 +10,6 @@
             <%= @user.user_name %>
           </h1>
 
-          <% if !current_user?(@user) && user_signed_in? %>
-            <span id="follow-form">
-              <% if @user.followers.include?(current_user) %>
-                <%= render "relationships/unfollow" %>
-              <% else %>
-                <%= render "relationships/follow" %>
-              <% end %>
-            </span>
-          <% end %>
-
           <% if current_user?(@user) %>
             <span class="user-edit">
               <%= link_to "編集", edit_user_registration_path %>
@@ -42,8 +32,7 @@
                   <strong>
                     <%= @user.following.count %>
                   </strong>
-
-                  <p>following</p>
+                  <p>フォロー</p>
                 <% end %>
               </div>
 
@@ -52,7 +41,7 @@
                   <strong>
                     <%= @user.followers.count %>
                   </strong>
-                  <p>followers</p>
+                  <p>フォロワー</p>
                 <% end %>
               </div>
             <% end %>

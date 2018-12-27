@@ -40,14 +40,13 @@
                   <strong>
                     <%= @user.following.count %>
                   </strong>
-
                   <p>フォロー</p>
                 <% end %>
               </div>
 
               <div class="user-stat">
                 <%= link_to followers_user_path(@user) do %>
-                  <strong>
+                  <strong id="followers-count">
                     <%= @user.followers.count %>
                   </strong>
                   <p>フォロワー</p>
