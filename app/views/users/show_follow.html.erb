@@ -1,3 +1,5 @@
+<% provide(:title, @title) %>
+
 <div class="user-page">
   <div class="container">
     <div class="row">
@@ -41,7 +43,7 @@
                     <%= @user.following.count %>
                   </strong>
 
-                  <p>フォロー</p>
+                  <p>following</p>
                 <% end %>
               </div>
 
@@ -50,14 +52,25 @@
                   <strong>
                     <%= @user.followers.count %>
                   </strong>
-                  <p>フォロワー</p>
+                  <p>followers</p>
                 <% end %>
               </div>
             <% end %>
           </section>
         </div>
       </aside>
-      <%= render "articles/my_article" %>
+
+      <div class="col-md-8 follow-page">
+        <h2 class="text-center"><%= @title_users %></h2>
+        <ul class="follow-info">
+          <% @users.each do |user| %>
+            <li>
+              <%= image_tag user.image.url, class: "users-image" %>
+              <%= link_to user.user_name, user_path(user), class: "users-name" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

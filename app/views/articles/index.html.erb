@@ -16,7 +16,7 @@
                 <%= link_to "@#{article.user.user_name}", user_path(article.user_id), class: "articles-user-name" %>
                 <p class="articles-updated-time">
                   <%= article.updated_at.strftime("%Y年%-m月%-d日") %>
-                  <%= render partial: "favorite_articles/favorite_icon", locals: { article: article } %>
+                  <%= render partial: "favorite_articles/favorite_form", locals: { article: article } %>
                 </p>
               </span><br>
 
