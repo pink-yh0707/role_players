@@ -138,6 +138,17 @@ body {
         border: 0;
       }
     }
+
+    .follow-users {
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      .follow-user {
+        object-fit: contain;
+        padding: 2px;
+        height: 45px;
+      }
+    }
   }
 
   .follow-form {
