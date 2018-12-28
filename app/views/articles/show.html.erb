@@ -10,7 +10,7 @@
 
         <div class="col-md-7 article-sub-info">
           <%= link_to "@#{@article.user.user_name}", user_path(@article.user.id), class: "article-sub-user-name" %>
-          <p class="article-updated-time"><%= "#{@article.updated_at.strftime("%Y年%-m月%-d日")}に更新" %></p>
+          <p class="article-created-time"><%= "#{@article.created_at.strftime("%Y年%-m月%-d日")}" %></p>
 
           <% if current_user?(@article.user) %>
             <span class="article-edit">
