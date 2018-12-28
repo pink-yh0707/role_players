@@ -5,7 +5,7 @@
 
   <span class="col-md-8">
     <%= link_to "@#{article.user.user_name}", user_path(article.user_id), class: "articles-user-name" %>
-    <p class="articles-updated-time"><%= article.updated_at.strftime("%Y年%-m月%-d日") %></p>
+    <p class="articles-created-time"><%= article.created_at.strftime("%Y年%-m月%-d日") %></p>
 
     <%= render partial: "favorite_articles/favorite_form", locals: { article: article } %>
 
