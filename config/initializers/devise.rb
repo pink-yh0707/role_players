@@ -289,5 +289,5 @@ Devise.setup do |config|
   #   include Turbolinks::Controller
   # end
 
-  config.omniauth :facebook, Setting.facebook[:id], Setting.facebook[:secret]
+  config.omniauth :facebook, Settings.facebook[:id], Settings.facebook[:secret]
 end
