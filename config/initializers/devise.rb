@@ -288,4 +288,6 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
+
+  config.omniauth :facebook, Setting.facebook[:id], Setting.facebook[:secret]
 end

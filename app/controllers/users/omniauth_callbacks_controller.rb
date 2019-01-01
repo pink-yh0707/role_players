@@ -4,6 +4,26 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 
+
+  def facebook
+    callback_from(:facebook)
+  end
+
+  private
+    def callback_from(provider)
+      provider = provider.to_s
+
+      @user = User.find_for_oauth(request.env["omniauth.auth"])
+      @user.skip_confirmation!
+      if @user.persisted?
+        set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?
+        sign_in_and_redirect @user
+      else
+        session["devise.#{provider}_data"] = request.env["omniauth.auth"]
+        redirect_to new_user_registration_path
+      end
+    end
+
   # You should also create an action method in this controller like this:
   # def twitter
   # end
