@@ -45,7 +45,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'font-awesome-sass', '~> 5.6'
 gem 'omniauth', '~> 1.9'
 gem 'omniauth-facebook', '~> 5.0'
-gem 'omniauth-twitter', '~> 1.4'
+gem 'omniauth-google-oauth2', '~> 1.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
