@@ -9,13 +9,13 @@
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= render "shared/error_messages", object: f.object %>
 
-          <% if @mode == 'password'%>
+          <% if @mode == 'password' && !current_user.uid? && !current_user.provider? %>
             <%# パスワードを変更する画面 %>
 
               <div class="form-group">
                 <%= f.label :email %><br />
                 <%= f.email_field :email, autofocus: true, autocomplete: "email",
-                  class: "form-control"%>
+                  class: "form-control" %>
               </div>
 
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -74,7 +74,9 @@
                 <%= f.submit "更新", class: "btn-block btn-primary" %>
               </div>
 
-              <%= link_to "メールアドレス、又はパスワードを変更する場合", edit_user_registration_path + "?mode=password" %>
+              <% if !current_user.uid? && !current_user.provider? %>
+                <%= link_to "メールアドレス、又はパスワードを変更する場合", edit_user_registration_path + "?mode=password" %>
+              <% end %>
 
               <%= f.hidden_field :mode, value: @mode %>
             <% end %>

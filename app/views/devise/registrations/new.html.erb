@@ -1,4 +1,5 @@
 <% provide(:title, "Sign up") %>
+<% provide(:text, "サインアップ") %>
 
 <div class="form-wrapper">
   <div class="container">
@@ -40,8 +41,8 @@
           </div>
         <% end %>
 
+        <%= render "devise/shared/sns_login" %>
         <%= render "devise/shared/links" %>
-
       </div>
     </div>
   </div>

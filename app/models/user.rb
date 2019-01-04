@@ -2,7 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable
+         :recoverable, :rememberable, :validatable, :confirmable,
+         :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -43,5 +44,21 @@ class User < ApplicationRecord
     result = update_attributes(params, *options)
     clean_up_passwords
     result
+  end
+
+  def self.find_for_oauth(auth)
+    where(uid: auth.uid, provider: auth.provider).first_or_create do |user|
+      user.uid       = auth.uid
+      user.provider  = auth.provider
+      user.email     = User.dammy_email(auth)
+      user.user_name = auth.info.name
+      user.password = Devise.friendly_token[0,20]
+      # メール認証をスキップ
+      user.skip_confirmation!
+    end
+  end
+
+  def self.dammy_email(auth)
+    "#{auth.uid}-#{auth.provider}@example.com"
   end
 end
