@@ -342,7 +342,7 @@ DEPENDENCIES
   mysql2 (>= 0.4.4, < 0.6.0)
   omniauth (~> 1.9)
   omniauth-facebook (~> 5.0)
-  omniauth-google-oauth2
+  omniauth-google-oauth2 (~> 0.6)
   pry-byebug
   puma (~> 3.11)
   rails (~> 5.2.1, >= 5.2.1.1)

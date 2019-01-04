@@ -9,14 +9,18 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     callback_from(:facebook)
   end
 
+  def google_oauth2
+    callback_from(:google)
+  end
+
   private
     def callback_from(provider)
       provider = provider.to_s
 
       @user = User.find_for_oauth(request.env["omniauth.auth"])
-      
+
       if @user.persisted?
-        set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?
+        set_flash_message(:notice, :success, kind: "#{provider.capitalize}") if is_navigational_format?
         sign_in_and_redirect @user
       else
         session["devise.#{provider}_data"] = request.env["omniauth.auth"]

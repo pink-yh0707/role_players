@@ -290,4 +290,5 @@ Devise.setup do |config|
   # end
 
   config.omniauth :facebook, Settings.facebook[:id], Settings.facebook[:secret]
+  config.omniauth :google_oauth2, Settings.google[:id], Settings.google[:secret]
 end
