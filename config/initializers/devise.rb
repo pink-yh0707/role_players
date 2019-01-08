@@ -289,6 +289,6 @@ Devise.setup do |config|
   #   include Turbolinks::Controller
   # end
 
-  config.omniauth :facebook, Settings.facebook[:id], Settings.facebook[:secret]
-  config.omniauth :google_oauth2, Settings.google[:id], Settings.google[:secret]
+  config.omniauth :facebook, ENV["FACEBOOK_ID"], ENV["FACEBOOK_SECRET"]
+  config.omniauth :google_oauth2, ENV["GOOGLE_ID"], ENV["GOOGLE_SECRET"]
 end

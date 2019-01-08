@@ -46,6 +46,7 @@ gem 'font-awesome-sass', '~> 5.6'
 gem 'omniauth', '~> 1.9'
 gem 'omniauth-facebook', '~> 5.0'
 gem 'omniauth-google-oauth2', '~> 0.6'
+gem 'dotenv-rails', '~> 2.5.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -60,7 +61,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'spring-commands-rspec'
-  gem 'config', '~> 1.7'
   gem 'pry-byebug'
   gem 'letter_opener'
 end
