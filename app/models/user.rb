@@ -20,12 +20,9 @@ class User < ApplicationRecord
   attr_accessor :current_password
 
   # 8~32文字内で半角英数字が1つ以上含まれている
-  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,32}+\z/i
-  validates :password, format: { with: VALID_PASSWORD_REGEX },
-    on: :update, allow_blank: true
-
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, format: { with: VALID_EMAIL_REGEX }
+  validates_format_of :password, with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,32}+\z/i, allow_blank: true
+  validates_format_of :email, with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  
   validates :user_name, presence: true, uniqueness: true
   validates :profile, length: { maximum: 500 }
 

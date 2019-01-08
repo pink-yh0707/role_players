@@ -34,14 +34,14 @@ RSpec.describe User, type: :model do
       user = FactoryBot.build(:user, password: "a" * 7)
       user.valid?
       # deviseを日本語訳したため
-      expect(user.errors[:password]).to include("は有効でありません。")
+      expect(user.errors[:password]).to include("は8文字以上に設定して下さい。")
     end
 
     it "33文字以上の場合" do
       user = FactoryBot.build(:user, password: "8" * 33)
       user.valid?
       # deviseを日本語訳したため
-      expect(user.errors[:password]).to include("は有効でありません。")
+      expect(user.errors[:password]).to include("は32文字以下に設定して下さい。")
     end
 
     it "英数字が含まれていない場合" do
@@ -72,6 +72,23 @@ RSpec.describe User, type: :model do
       user.valid?
       # deviseを日本語訳したため
       expect(user.errors[:user_name]).to include("は既に使用されています。")
+    end
+  end
+
+  it "プロフィールは500文字以内であれば有効" do
+    user = FactoryBot.create(:user, :confirmed_at)
+    user.update_attribute(:profile, "a" * 500)
+
+    expect(user).to be_valid 
+  end
+
+  describe "プロフィール作成に不備がある場合" do
+    it "501文字以上の場合" do
+      user = FactoryBot.create(:user, :confirmed_at)
+      user.update_attribute(:profile, "a" * 501)
+
+      user.valid?
+      expect(user.errors[:profile]).to  include("は500文字以内で入力してください")
     end
   end
 end
