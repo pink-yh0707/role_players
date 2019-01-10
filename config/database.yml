@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: roll_players_production
-  username: roll_players
-  password: <%= ENV['ROLL_PLAYERS_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
