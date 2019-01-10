@@ -6,8 +6,6 @@ ruby '2.5.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
-# Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -63,6 +61,8 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'pry-byebug'
   gem 'letter_opener'
+  gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+  # Use Puma as the app server
 end
 
 group :test do
@@ -76,7 +76,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '~> 1.4'
+  gem 'pg', '~> 1.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
