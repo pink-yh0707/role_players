@@ -84,8 +84,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   private
     def set_mode
-      if (!params[:user].nil? && params[:user][:mode] == "profile") || (params[:user].nil?
-          && params[:mode].nil?) || (params[:mode] == "profile") then
+      if (!params[:user].nil? && params[:user][:mode] == "profile") || (params[:user].nil? && params[:mode].nil?) || (params[:mode] == "profile") then
         @mode = "profile"
       else
         @mode = "password"
