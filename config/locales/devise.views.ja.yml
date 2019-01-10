@@ -5,29 +5,29 @@ ja:
         user:
           attributes:
             email:
-              taken: "は既に使用されています。"
-              blank: "が入力されていません。"
-              too_short: "は%{count}文字以上に設定して下さい。"
-              too_long: "は%{count}文字以下に設定して下さい。"
-              invalid: "は有効でありません。"
+              taken: "は既に使用されています"
+              blank: "が入力されていません"
+              too_short: "は%{count}文字以上に設定してください"
+              too_long: "は%{count}文字以下に設定してください"
+              invalid: "は有効でありません"
             password:
-              taken: "は既に使用されています。"
-              blank: "が入力されていません。"
-              too_short: "は8文字以上に設定して下さい。"
-              too_long: "は32文字以下に設定して下さい。"
-              invalid: "は有効でありません。"
-              confirmation: "が内容とあっていません。"
+              taken: "は既に使用されています"
+              blank: "が入力されていません"
+              too_short: "は8文字以上に設定してください"
+              too_long: "は32文字以下に設定してください"
+              invalid: "は有効でありません"
+              confirmation: "が内容とあっていません"
             password_confirmation:
-              taken: "は既に使用されています。"
-              blank: "が入力されていません。"
-              too_short: "は8文字以上に設定して下さい。"
-              too_long: "は32文字以下に設定して下さい。"
-              invalid: "は有効でありません。"
-              confirmation: "が内容とあっていません。"
+              taken: "は既に使用されています"
+              blank: "が入力されていません"
+              too_short: "は8文字以上に設定してください"
+              too_long: "は32文字以下に設定してください"
+              invalid: "は有効でありません"
+              confirmation: "が内容とあっていません"
             user_name:
-              blank: "が入力されていません。"
-              taken: "は既に使用されています。"
-              invalid: "は有効ではありません。"
+              blank: "が入力されていません"
+              taken: "は既に使用されています"
+              invalid: "は有効ではありません"
     attributes:
       user:
         current_password: "現在のパスワード"
@@ -36,6 +36,7 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+        profile: "自己紹介"
     models:
       user: "ユーザ"
   devise:

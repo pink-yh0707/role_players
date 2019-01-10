@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
+  before do
+    @user = FactoryBot.create(:user, :confirmed_at)
+  end
 
   describe "GET #index" do
     it "returns http success" do
@@ -10,23 +13,31 @@ RSpec.describe ArticlesController, type: :controller do
   end
 
   describe "GET #show" do
+    @user = FactoryBot.create(:user, :create_article)
+    @article = @user.articles.find(1)
+
     it "returns http success" do
-      get :show
+      get :show, params: { id: @article.id }
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #new" do
     it "returns http success" do
+      login @user
       get :new
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #create" do
-    it "returns http success" do
-      get :create
-      expect(response).to have_http_status(:success)
+    it "記事を追加できること" do
+      article_params = FactoryBot.attributes_for(:article)
+      login @user
+
+      expect {
+        post :create, params: { article: article_params }
+      }.to change(@user.articles, :count).by(1)
     end
   end
 
