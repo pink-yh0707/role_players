@@ -4,6 +4,7 @@
   <div class="container">
     <div class="row">
       <h2 class="text-center">記事一覧</h2>
+
       <ul class="articles-info">
         <% @articles.each do |article| %>
           <% if article.released? %>
@@ -29,8 +30,11 @@
             </li>
           <% end %>
         <% end %>
-        <%= paginate @articles %>
       </ul>
+
+      <div class="paginate">
+        <%= paginate @articles %>
+      </div>
     </div>
   </div>
 </div>

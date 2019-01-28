@@ -67,8 +67,10 @@
               <%= link_to user.user_name, user_path(user), class: "users-name" %>
             </li>
           <% end %>
-          <%= paginate @users %>
         </ul>
+        <div class="paginate">
+          <%= paginate @users %>
+        </div>
       </div>
     </div>
   </div>
