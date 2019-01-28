@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @articles = Article.all.includes(:player)
+    @articles = Article.page(params[:page]).per(10).includes(:player)
   end
 
   def show

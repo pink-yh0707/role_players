@@ -6,4 +6,5 @@
       <%= render partial: "articles/article", locals: { article: article } %>
     <% end %>
   <% end %>
+  <%= paginate @articles %>
 </ul>
