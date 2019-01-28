@@ -13,11 +13,10 @@ RSpec.describe ArticlesController, type: :controller do
   end
 
   describe "GET #show" do
-    @user = FactoryBot.create(:user, :create_article)
-    @article = @user.articles.find(1)
+    @user = FactoryBot.create(:article)
 
     it "returns http success" do
-      get :show, params: { id: @article.id }
+      get :show, params: { id: @user.id }
       expect(response).to have_http_status(:success)
     end
   end

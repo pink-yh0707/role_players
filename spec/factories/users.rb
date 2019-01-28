@@ -11,7 +11,8 @@ FactoryBot.define do
     trait :create_article do
       association :article, factory: :article,
       article_title: "記事タイトル",
-      content: "紹介文"
+      content: "紹介文",
+      user_id: "@user"
 
       association :player, factory: :player,
         player_name: "プレイヤー",
