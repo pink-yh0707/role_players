@@ -59,7 +59,7 @@
 
       <div class="col-md-8 follow-page">
         <%= render "users/show_follow_text_title" %>
-        
+
         <ul class="follow-info">
           <% @users.each do |user| %>
             <li>
@@ -67,6 +67,7 @@
               <%= link_to user.user_name, user_path(user), class: "users-name" %>
             </li>
           <% end %>
+          <%= paginate @users %>
         </ul>
       </div>
     </div>
