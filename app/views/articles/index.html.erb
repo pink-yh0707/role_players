@@ -5,6 +5,16 @@
     <div class="row">
       <h2 class="text-center">記事一覧</h2>
 
+      <div class="form-inline">
+        <div class="serch-form">
+          <%= form_tag articles_path, method: :get do %>
+            <%= text_field_tag :search, "", placeholder: "選手名か所属チーム名を入力してください・・・", class: "form-control" %>
+            <%= submit_tag "検索", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+
+
       <ul class="articles-info">
         <% @articles.each do |article| %>
           <% if article.released? %>

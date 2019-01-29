@@ -324,6 +324,17 @@ body {
     background-color: white;
     border-radius: 5px;
 
+    .form-inline {
+      margin-left: 60%;
+
+      .serch-form {
+        .form-control {
+          width: 80%;
+        }
+      }
+    }
+
+
     .articles-info {
       padding-left: 40px;
       list-style: none;
