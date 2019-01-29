@@ -36,13 +36,19 @@
           <h2 class="player-spec"><%= "身長/体重 #{@article.player.height} / #{@article.player.weight}" %></h2>
 
           <div class="favorite-area">
-            <span class="favorite-status" id="favorite-form<%= @article.id %>">
-              <% if @article.favorites.include?(current_user) %>
-                <%= render "favorite_articles/not_favorite" %>
-              <% else %>
-                <%= render "favorite_articles/favorite" %>
+            <% if user_signed_in? %>
+              <span class="favorite-status" id="favorite-form<%= @article.id %>">
+                <% if @article.favorites.include?(current_user) %>
+                  <%= render "favorite_articles/not_favorite" %>
+                <% else %>
+                  <%= render "favorite_articles/favorite" %>
+                <% end %>
+              </span>
+            <% else %>
+              <%= link_to new_user_session_path do %>
+                <%= icon("far", "thumbs-up", class: "favorite-default-icon") %>
               <% end %>
-            </span>
+            <% end %>
 
             <span id="favorite-count<%= @article.id %>"><%= @article.favorite_articles.count %></span>
           </div><br>

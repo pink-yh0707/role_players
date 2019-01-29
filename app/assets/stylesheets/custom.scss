@@ -334,7 +334,6 @@ body {
       }
     }
 
-
     .articles-info {
       padding-left: 40px;
       list-style: none;
@@ -566,6 +565,12 @@ body {
   margin-bottom: 50px;
   padding-bottom: 15px;
   border-bottom: 1px solid #eaeaea;
+
+  .favorite-default-icon {
+    margin-left: 530px;
+    font-size: 30px;
+    display: inline;
+  }
 
   .favorite-status {
     margin-left: 530px;
