@@ -324,6 +324,16 @@ body {
     background-color: white;
     border-radius: 5px;
 
+    .form-inline {
+      margin-left: 60%;
+
+      .serch-form {
+        .form-control {
+          width: 80%;
+        }
+      }
+    }
+
     .articles-info {
       padding-left: 40px;
       list-style: none;
@@ -556,6 +566,12 @@ body {
   padding-bottom: 15px;
   border-bottom: 1px solid #eaeaea;
 
+  .favorite-default-icon {
+    margin-left: 530px;
+    font-size: 30px;
+    display: inline;
+  }
+
   .favorite-status {
     margin-left: 530px;
 
@@ -577,4 +593,10 @@ body {
       margin-left: 5px;
     }
   }
+}
+
+//ページネーション
+
+.paginate {
+  text-align: center;
 }

@@ -4,6 +4,18 @@
   <div class="container">
     <div class="row">
       <h2 class="text-center">記事一覧</h2>
+
+      <div class="form-inline">
+        <div class="serch-form">
+          <%= form_tag articles_path, method: :get do %>
+            <%= text_field_tag :search, "",
+              placeholder: "選手名か所属チーム名を入力してください・・・", class: "form-control" %>
+
+            <%= submit_tag "検索", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+
       <ul class="articles-info">
         <% @articles.each do |article| %>
           <% if article.released? %>
@@ -13,6 +25,8 @@
               <%= link_to article.article_title, article_path(article), class: "articles-title col-md-8" %><br>
 
               <span class="col-md-8">
+                <%= "#{article.player.player_name} | #{article.player.team_name}" %><br>
+
                 <%= link_to "@#{article.user.user_name}", user_path(article.user_id), class: "articles-user-name" %>
                 <p class="articles-updated-time">
                   <%= article.updated_at.strftime("%Y年%-m月%-d日") %>
@@ -27,8 +41,11 @@
             </li>
           <% end %>
         <% end %>
-        <%= paginate @articles %>
       </ul>
+
+      <div class="paginate">
+        <%= paginate @articles %>
+      </div>
     </div>
   </div>
 </div>

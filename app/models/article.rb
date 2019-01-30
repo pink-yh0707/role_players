@@ -18,4 +18,12 @@ class Article < ApplicationRecord
   mount_uploader :article_image, ArticleImageUploader
 
   enum status: { privated: 0, released: 1 }
+
+  def self.search(search)
+    if search
+      where(["player_name LIKE (:search) OR team_name LIKE (:search)", search: "%#{search}%"])
+    else
+      all
+    end
+  end
 end
