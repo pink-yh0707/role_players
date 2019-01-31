@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+本アプリはバスケットボール選手の紹介記事を書くという題材のもと、
+Twitterライクなアプリとして練習用に作成したものです。
 
-Things you may want to cover:
 
-* Ruby version
+* ユーザー登録機能（deviseによるメール認証、パスワード再設定機能。+OmniAuthによるFacebook、Google認証機能）
 
-* System dependencies
+* 記事一覧表示（選手名、所属チーム名の検索機能)
 
-* Configuration
+* 記事作成、閲覧機能（編集、削除、記事公開非公開機能）
 
-* Database creation
+* 記事のいいね機能
 
-* Database initialization
+* 記事のコメント機能
 
-* How to run the test suite
+* ユーザーページ閲覧機能（編集、削除、投稿記事の一覧表示、フォロー及びフォロワーの表示）
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* ユーザー一覧表示
