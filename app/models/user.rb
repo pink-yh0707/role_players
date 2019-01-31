@@ -22,7 +22,7 @@ class User < ApplicationRecord
   # 8~32文字内で半角英数字が1つ以上含まれている
   validates_format_of :password, with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,32}+\z/i, allow_blank: true
   validates_format_of :email, with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  
+
   validates :user_name, presence: true, uniqueness: true
   validates :profile, length: { maximum: 500 }
 
@@ -49,7 +49,7 @@ class User < ApplicationRecord
       user.provider  = auth.provider
       user.email     = User.dammy_email(auth)
       user.user_name = auth.info.name
-      user.password = Devise.friendly_token[0,20]
+      user.password  = Devise.friendly_token[0,20]
       # メール認証をスキップ
       user.skip_confirmation!
     end
