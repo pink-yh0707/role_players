@@ -10,6 +10,12 @@ class UsersController < ApplicationController
     @articles = @user.articles.page(params[:page]).per(5)
   end
 
+  def favorite_order
+    @user = User.find(params[:id])
+    @articles = @user.articles.page(params[:page]).per(5)
+    render "favorite_order"
+  end
+
   def following
     @user = User.find(params[:id])
     @users = @user.following.page(params[:page]).per(10)
