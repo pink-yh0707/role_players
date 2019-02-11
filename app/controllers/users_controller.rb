@@ -16,6 +16,12 @@ class UsersController < ApplicationController
     render "favorite_order"
   end
 
+  def user_favorite_articles
+    @user = User.find(params[:id])
+    @articles = @user.my_favorite_articles.page(params[:page]).per(5).my_favorite_articles_sort
+    render "favorite_order"
+  end
+
   def following
     @user = User.find(params[:id])
     @users = @user.following.page(params[:page]).per(10)

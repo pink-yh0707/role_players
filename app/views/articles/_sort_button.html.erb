@@ -1,23 +1,47 @@
 <% if controller.action_name == "show" || controller.controller_name == "home" %>
   <ul class="nav nav-tabs order-tabs">
     <li>
-      <%= link_to "最近の記事", user_path(@user), class: "recently-order" %>
+      <%= link_to "最近の記事", user_path(@user), class: "active-sort-button" %>
     </li>
 
     <li>
-      <%= link_to "いいねした記事", favorite_order_user_path(@user) %>
+      <%= link_to "いいね数が多い記事", favorite_order_user_path(@user) %>
+    </li>
+
+    <li>
+      <%= link_to "いいねした記事" , user_favorite_articles_user_path(@user) %>
     </li>
   </ul>
 
   <%= render "articles/private_articles" %>
-<% else controller.action_name == "favorite_order" %>
+<% elsif controller.action_name == "favorite_order" %>
   <ul class="nav nav-tabs order-tabs">
     <li>
       <%= link_to "最近の記事", user_path %>
     </li>
 
     <li>
-      <%= link_to "いいねした記事", favorite_order_user_path, class: "favorite-order" %>
+      <%= link_to "いいね数が多い記事", favorite_order_user_path, class: "active-sort-button" %>
+    </li>
+
+    <li>
+      <%= link_to "いいねした記事" , user_favorite_articles_user_path %>
+    </li>
+  </ul>
+
+  <%= render "articles/private_articles" %>
+<% else controller.action_name == "my_favorite_articles" %>
+  <ul class="nav nav-tabs order-tabs">
+    <li>
+      <%= link_to "最近の記事", user_path %>
+    </li>
+
+    <li>
+      <%= link_to "いいね数が多い記事", favorite_order_user_path %>
+    </li>
+
+    <li>
+      <%= link_to "いいねした記事" , user_favorite_articles_user_path, class: "active-sort-button" %>
     </li>
   </ul>
 

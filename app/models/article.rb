@@ -6,8 +6,8 @@ class Article < ApplicationRecord
 
   has_many :comments
 
-  has_many :favorite_articles, foreign_key: "article_id", dependent: :destroy
-  has_many :favorites, through: "favorite_articles", source: "user"
+  has_many :favorite_articles, dependent: :destroy
+  has_many :favorites, through: :favorite_articles, source: :user
 
   default_scope -> { order(created_at: :desc) }
 
@@ -31,5 +31,10 @@ class Article < ApplicationRecord
     def self.favorite_sort
       select("articles.*", "COUNT(favorite_articles.id) AS favs")
       .left_joins(:favorite_articles).group("articles.id").unscope(:order).order("favs DESC")
+    end
+
+    def self.my_favorite_articles_sort
+      left_joins(:favorite_articles).group("favorite_articles.id")
+      .unscope(:order).order("favorite_articles.created_at desc")
     end
 end
