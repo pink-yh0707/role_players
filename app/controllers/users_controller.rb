@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def favorite_order
     @user = User.find(params[:id])
-    @articles = @user.articles.page(params[:page]).per(5)
+    @articles = @user.articles.page(params[:page]).per(5).favorite_sort
     render "favorite_order"
   end
 
