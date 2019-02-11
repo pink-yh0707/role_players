@@ -6,7 +6,7 @@ class Article < ApplicationRecord
 
   has_many :comments
 
-  has_many :favorite_articles, dependent: :destroy
+  has_many :favorite_articles, foreign_key: "article_id", dependent: :destroy
   has_many :favorites, through: "favorite_articles", source: "user"
 
   default_scope -> { order(created_at: :desc) }
@@ -19,11 +19,17 @@ class Article < ApplicationRecord
 
   enum status: { privated: 0, released: 1 }
 
-  def self.search(search)
-    if search
-      where(["player_name LIKE (:search) OR team_name LIKE (:search)", search: "%#{search}%"])
-    else
-      all
+  private
+    def self.search(search)
+      if search
+        where(["player_name LIKE (:search) OR team_name LIKE (:search)", search: "%#{search}%"])
+      else
+        all
+      end
     end
-  end
+
+    def self.favorite_sort
+      select("articles.*", "COUNT(favorite_articles.id) AS favs")
+      .left_joins(:favorite_articles).group("articles.id").unscope(:order).order("favs DESC")
+    end
 end

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :relationships, only: [:create, :destroy]
 
     member do
-      get :following, :followers
+      get :following, :followers, :favorite_order
     end
   end
 

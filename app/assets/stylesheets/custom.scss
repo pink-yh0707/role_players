@@ -192,6 +192,26 @@ body {
     border-radius: 5px;
     margin-top: 15px;
 
+  .order-tabs {
+    margin-top: 20px;
+
+    .recently-order {
+      color: #333;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-bottom-color: transparent;
+      cursor: default;
+    }
+
+    .favorite-order {
+      color: #333;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-bottom-color: transparent;
+      cursor: default;
+    }
+  }
+
     .articles-info {
       padding-left: 40px;
       list-style: none;

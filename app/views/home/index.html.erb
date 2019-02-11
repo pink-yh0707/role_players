@@ -1,4 +1,6 @@
 <% if user_signed_in? %>
+  <% provide(:title, @user.user_name) %>
+  
   <%= render @user %>
 <% else %>
   <div class="jumbotron top-home-wrapper">
