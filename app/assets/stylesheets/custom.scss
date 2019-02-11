@@ -195,15 +195,7 @@ body {
   .order-tabs {
     margin-top: 20px;
 
-    .recently-order {
-      color: #333;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-bottom-color: transparent;
-      cursor: default;
-    }
-
-    .favorite-order {
+    .active-sort-button {
       color: #333;
       background-color: #fff;
       border: 1px solid #ddd;
