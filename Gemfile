@@ -64,6 +64,7 @@ group :development do
   gem 'pry-byebug'
   gem 'letter_opener'
   gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+  gem 'bullet', '~> 5.9'
   # Use Puma as the app server
 end
 
