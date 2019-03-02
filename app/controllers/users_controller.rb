@@ -7,18 +7,19 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @articles = @user.articles.page(params[:page]).per(5)
+    @articles = @user.articles.page(params[:page]).per(5).includes(:player, :favorites)
   end
 
   def favorite_order
     @user = User.find(params[:id])
-    @articles = @user.articles.page(params[:page]).per(5).favorite_sort
+    @articles = @user.articles.page(params[:page]).per(5).includes(:player, :favorites).favorite_sort
     render "favorite_order"
   end
 
   def user_favorite_articles
     @user = User.find(params[:id])
-    @articles = @user.my_favorite_articles.page(params[:page]).per(5).my_favorite_articles_sort
+    @articles = @user.my_favorite_articles.page(params[:page]).per(5)
+      .includes(:user, :player, :favorites).my_favorite_articles_sort
     render "favorite_order"
   end
 
