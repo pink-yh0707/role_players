@@ -1,3 +1,63 @@
-// Place all the styles related to the Favorite_articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// いいね機能
+
+.private-article {
+  margin-right: 10px;
+  color: #7f7f7f;
+}
+
+.favorite-default-icon {
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.favorite-favorite-icon {
+  font-size: 20px;
+  margin-left: 5px;
+  color: #ffbf00;
+}
+
+.favorite-not-favorite-icon {
+  font-size:  20px;
+  margin-left: 5px;
+  color: #ffbf00;
+}
+
+.release-article {
+  margin-right: 10px;
+  color: #006532
+}
+
+.favorite-area {
+  margin-left: 7px;
+  margin-bottom: 50px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eaeaea;
+
+  .favorite-default-icon {
+    margin-left: 530px;
+    font-size: 30px;
+    display: inline;
+  }
+
+  .favorite-status {
+    margin-left: 530px;
+
+    .favorite-favorite-icon {
+      font-size: 30px;
+      display: inline;
+      color: #ffbf00;
+    }
+
+    .favorite-not-favorite-icon {
+      font-size: 30px;
+      display: inline;
+      color: #ffbf00;
+    }
+
+    #favorite-count {
+      display: inline;
+      font-size: 20px;
+      margin-left: 5px;
+    }
+  }
+}
