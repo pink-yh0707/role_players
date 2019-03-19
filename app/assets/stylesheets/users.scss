@@ -1,3 +1,242 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// ユーザーページ
+.user-page {
+  padding-top: 80px;
+
+  .user-info {
+    background-color: white;
+    padding: 10px;
+    margin: 15px 0 15px 15px;
+    border-radius: 5px;
+
+    h1 {
+      font-size: 25px;
+      margin-top: 0px;
+      padding: 5px;
+
+      .user-image {
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .user-profile {
+    background-color: white;
+    padding: 10px;
+    margin: 15px 0 15px 15px;
+    border-radius: 5px;
+
+    h2 {
+      font-size: 20px;
+      margin-top: 0px;
+    }
+  }
+
+  .user-stats {
+    background-color: white;
+    padding: 10px;
+    margin: 15px 0 15px 15px;
+    border-radius: 5px;
+
+    .user-stat {
+      display: inline-block;
+      padding: 0 10px;
+      border-left: 1px solid #eaeaea;
+
+      &:first-child {
+        padding-left: 0;
+        border: 0;
+      }
+    }
+
+    .follow-users {
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      .follow-user {
+        object-fit: contain;
+        padding: 2px;
+        height: 45px;
+      }
+    }
+  }
+
+  .follow-form {
+    height: 20px;
+  }
+
+  .follow-icon {
+    font-size: 15px;
+  }
+
+  .follow-icon-text {
+    display: inline;
+    font-size: 14px;
+  }
+
+  .unfollow-form {
+    height: 20px;
+  }
+
+  .unfollow-icon {
+    font-size: 15px;
+  }
+
+  .unfollow-icon-text {
+    display: inline;
+    font-size: 14px;
+  }
+
+  .user-edit {
+    margin-left: 270px;
+    font-size: 20px;
+  }
+
+  .article-button {
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+
+  .my-articles {
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+
+  .order-tabs {
+    margin-top: 20px;
+
+    .active-sort-button {
+      color: #333;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-bottom-color: transparent;
+      cursor: default;
+    }
+  }
+
+    .articles-info {
+      padding-left: 40px;
+      list-style: none;
+
+      li {
+        border-bottom: 1px solid #eaeaea;
+        padding: 15px;
+      }
+
+      .articles-image {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+      }
+
+      .articles-title {
+        font-size: 30px;
+        color: #000098;
+      }
+
+      .articles-user-name {
+        margin-left: 0;
+        margin-right: 10px;
+        color: #000098;
+      }
+
+      .articles-created-time {
+        display: inline;
+        color: #7f7f7f;
+        font-size: 15px;
+      }
+
+      .article-edit {
+        float: right;
+        padding-right: 10px;
+      }
+
+      .articles-content {
+        padding-top: 10px;
+      }
+    }
+  }
+
+  .havent-article {
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+    height: 30vh;
+
+    h3 {
+      border-bottom: 1px solid #eaeaea;
+      padding: 15px;
+    }
+  }
+
+  .follow-page {
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+
+    .follow-info {
+      padding-left: 40px;
+      list-style: none;
+
+      li {
+        border-bottom: 1px solid #eaeaea;
+        padding: 15px;
+
+        a {
+          color: #000098;
+        }
+      }
+
+      .users-image {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+
+      .users-name {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+
+
+
+
+// ユーザー一覧ページ
+.users-page {
+  padding-top: 100px;
+
+  .row {
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  .users-info {
+    padding-left: 40px;
+    list-style: none;
+
+    li {
+      border-bottom: 1px solid #eaeaea;
+      padding: 15px;
+
+      a {
+        color: #000098;
+      }
+    }
+
+    .users-image {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .users-name {
+      margin-left: 10px;
+    }
+  }
+}
