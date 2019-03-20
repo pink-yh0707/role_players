@@ -3,7 +3,9 @@
     <div class="row">
       <div class="col-md-offset-1 col-md-10">
         <%= icon("fas","comment-dots", class: "comment-icon") %>
-        <p class="comment-icon-text">コメント</p>
+        <p class="comment-icon-text">
+          コメント<%= "(#{@article.comments.count})" if @article.comments.present? %>
+        </p>
       </div>
 
       <%= render "comments/comment" %>
