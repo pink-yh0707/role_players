@@ -11,6 +11,9 @@
 
     <%= render partial: "favorite_articles/favorite_form", locals: { article: article } %>
 
+    <%= icon("far", "comment-dots", class: "article-comments") %>
+    <span><%= article.comments.count %></span>
+
     <% if current_user?(@user) && article.released? &&
      controller.action_name != "user_favorite_articles" %>
       <span class="release-article pull-right">公開記事</span>
