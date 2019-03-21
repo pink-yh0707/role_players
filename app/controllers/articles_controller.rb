@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @articles = Article.joins(:player).page(params[:page]).per(10)
+    @articles = Article.page(params[:page]).per(10)
       .includes(:user, :player, :favorites).search(params[:search])
   end
 
@@ -44,6 +44,12 @@ class ArticlesController < ApplicationController
     @article.destroy
     flash[:success] = "記事を削除しました。"
     redirect_to root_url
+  end
+
+  def favorite_order
+    @articles = Article.page(params[:page]).per(10)
+      .includes(:user, :player, :favorites).favorite_sort
+    render "index"
   end
 
   def release
