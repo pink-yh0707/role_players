@@ -16,6 +16,18 @@
       }
     }
 
+    .order-tabs {
+      margin: 20px 15px;
+
+      .active-sort-button {
+        color: #333;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+        cursor: default;
+      }
+    }
+
     .articles-info {
       padding-left: 40px;
       list-style: none;
@@ -47,7 +59,7 @@
           font-size: 15px;
         }
       }
-      
+
       .articles-content {
         padding-top: 10px;
       }

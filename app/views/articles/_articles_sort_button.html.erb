@@ -1,0 +1,23 @@
+<% if controller.action_name == "index" %>
+  <ul class="nav nav-tabs order-tabs">
+    <li>
+      <%= link_to "最新記事", articles_path, class: "active-sort-button" %>
+    </li>
+
+    <li>
+      <%= link_to "いいねが多い記事", favorite_order_articles_path %>
+    </li>
+  </ul>
+  <%= render "index_article" %>
+<% elsif controller.action_name == "favorite_order" %>
+  <ul class="nav nav-tabs order-tabs">
+    <li>
+      <%= link_to "最新記事", articles_path %>
+    </li>
+
+    <li>
+      <%= link_to "いいねが多い記事", favorite_order_articles_path, class: "active-sort-button" %>
+    </li>
+  </ul>
+  <%= render "index_article" %>
+<% end %>

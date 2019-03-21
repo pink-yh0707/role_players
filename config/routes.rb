@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   resources :articles do
     resources :favorite_articles, only: [:create, :destroy]
 
+    get :favorite_order, on: :collection
+
     member do
       patch :release, :private
     end

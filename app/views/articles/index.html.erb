@@ -16,36 +16,7 @@
         </div>
       </div>
 
-      <ul class="articles-info">
-        <% @articles.each do |article| %>
-          <% if article.released? %>
-            <li class="col-md-12">
-              <%= image_tag article.article_image.url, class: "articles-image col-md-4" %><br>
-
-              <%= link_to article.article_title, article_path(article), class: "articles-title col-md-8" %><br>
-
-              <span class="col-md-8">
-                <%= "#{article.player.player_name} | #{article.player.team_name}" %><br>
-
-                <%= link_to "@#{article.user.user_name}", user_path(article.user_id), class: "articles-user-name" %>
-                <p class="articles-updated-time">
-                  <%= article.updated_at.strftime("%Y年%-m月%-d日") %>
-
-                  <%= render partial: "favorite_articles/favorite_form", locals: { article: article } %>
-
-                  <%= icon("far", "comment-dots", class: "article-comments") %>
-                  <span><%= article.comments.count %></span>
-                </p>
-              </span><br>
-
-              <span class="articles-content col-md-8">
-                <%= truncate(article.content, length: 200) %>
-                <%= link_to "続きを読む", article_path(article.id) %>
-              </span>
-            </li>
-          <% end %>
-        <% end %>
-      </ul>
+      <%= render "articles_sort_button" %>
 
       <div class="paginate">
         <%= paginate @articles %>
