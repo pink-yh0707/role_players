@@ -17,3 +17,5 @@ Twitterライクなアプリとして練習用に作成したものです。
 * ユーザーページ閲覧機能（編集、削除、投稿記事の一覧表示、フォロー及びフォロワーの表示）
 
 * ユーザー一覧表示
+
+![63d4d9fbacf389df0f28cdb6aef1736b](https://user-images.githubusercontent.com/44133334/54763161-d3fd8e80-4c38-11e9-85db-a84a1e0f65df.png)
