@@ -13,14 +13,14 @@ class UsersController < ApplicationController
   def favorite_order
     @user = User.find(params[:id])
     @articles = @user.articles.page(params[:page]).per(5).includes(:player, :favorites).favorite_sort
-    render "favorite_order"
+    render "show"
   end
 
   def user_favorite_articles
     @user = User.find(params[:id])
     @articles = @user.my_favorite_articles.page(params[:page]).per(5)
       .includes(:user, :player, :favorites).my_favorite_articles_sort
-    render "favorite_order"
+    render "show"
   end
 
   def following
