@@ -47,6 +47,7 @@ gem 'omniauth-google-oauth2', '~> 0.6'
 gem 'dotenv-rails', '~> 2.5.0'
 gem 'kaminari', '~> 1.1'
 gem 'kaminari-bootstrap', '~> 3.0'
+gem 'rb-readline'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
