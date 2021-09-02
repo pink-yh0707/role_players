@@ -1,48 +1,48 @@
 <nav class="navbar navbar-expand-lg navbar-warning bg-warning navbar-fixed-top">
   <div class="container">
-      <button type="button" class="navbar-toggle" data-toggle="collapse"
-        data-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+    <button type="button" class="navbar-toggle" data-toggle="collapse"
+      data-target="#navbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
 
-      <%= link_to "RolePlayers", root_path, class: "navbar-brand" %>
+    <%= link_to "RolePlayers", root_path, class: "navbar-brand" %>
 
-      <div class="collapse navbar-collapse navbar-left" id="navbar">
-        <ul class="nav navbar-nav">
-          <% if user_signed_in? %>
-            <li><%= link_to "記事一覧", articles_path %></li>
+    <div class="collapse navbar-collapse navbar-left" id="navbar">
+      <ul class="nav navbar-nav">
+        <% if user_signed_in? %>
+          <li><%= link_to "記事一覧", articles_path %></li>
 
-            <li><%= link_to "ユーザー一覧", users_path %></li>
+          <li><%= link_to "ユーザー一覧", users_path %></li>
 
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                マイページ<span class="caret"></span>
-              </a>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              マイページ<span class="caret"></span>
+            </a>
 
-              <ul class="dropdown-menu">
-                <li><%= link_to "マイページ", user_path(current_user) %></li>
+            <ul class="dropdown-menu">
+              <li><%= link_to "マイページ", user_path(current_user) %></li>
 
-                <li><%= link_to "編集", edit_user_registration_path %></li>
+              <li><%= link_to "編集", edit_user_registration_path %></li>
 
-                <li><%= link_to "記事作成", new_article_path %></li>
+              <li><%= link_to "記事作成", new_article_path %></li>
 
-                <li><%= link_to "ログアウト", destroy_user_session_path,
-                    method: :delete %></li>
-              </ul>
-            </li>
+              <li><%= link_to "ログアウト", destroy_user_session_path,
+                  method: :delete %></li>
+            </ul>
+          </li>
 
-          <% else %>
-            <li><%= link_to "サインアップ", new_user_registration_path %></li>
+        <% else %>
+          <li><%= link_to "サインアップ", new_user_registration_path %></li>
 
-            <li><%= link_to "ログイン", new_user_session_path %></li>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
 
-            <li><%= link_to "記事一覧", articles_path %></li>
+          <li><%= link_to "記事一覧", articles_path %></li>
 
-            <li><%= link_to "ユーザー一覧", users_path %></li>
-          <% end %>
-        </ul>
-      </div>
+          <li><%= link_to "ユーザー一覧", users_path %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </nav>

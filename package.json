@@ -1,5 +1,8 @@
 {
   "name": "roll_players",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "gulp-sass": "^5.0.0",
+    "node-sass": "^6.0.1"
+  }
 }
